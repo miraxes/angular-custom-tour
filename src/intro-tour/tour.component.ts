@@ -32,8 +32,13 @@ export class FwylTourComponent implements OnInit {
     this.order = +this.order || this.hintService.hintOptions.defaultOrder;
     let highlightedElement = document.getElementById(this.selector);
     highlightedElement.style.zIndex = HintConfig.Z_INDEX;
+
     if (this.hintService.hintOptions.elementsDisabled) {
       this.disableClick(highlightedElement);
+    }
+    if (this.hintService.hintOptions.applyRelative) {
+      highlightedElement.style.position = 'relative';
+      highlightedElement.style.backgroundColor = '#fff';
     }
     this.showme = true;
     this.hasNext = this.hintService.hasNext();

@@ -3,7 +3,7 @@
   "description": "Custom angular tours",
   "repository": {
     "type": "git",
-    "url": "https://github.com/miraxes/"
+    "url": "https://github.com/miraxes/angular-custom-tour"
   },
   "version": "0.0.2",
   "license": "MIT",

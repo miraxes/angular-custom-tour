@@ -4,9 +4,17 @@ import { HintConfig } from '../variables';
 
 @Component({
   selector: HintConfig.HINT_TAG,
-  templateUrl: 'tour.html',
+  template: `<div class="intro-tour-hint-wrapper {{transformClass}}" *ngIf="showme" [ngStyle]="{'top': topPos+'px', 'left': leftPos+'px'}" >
+    <div class="header" *ngIf="title">{{title}}</div>
+    <div class="content"><ng-content></ng-content></div>
+    <div class="footer">
+      <a class="navigate-btn" *ngIf="hasPrev" (click)="prev()"> << </a>
+      <a class="navigate-btn" *ngIf="hasNext" (click)="next()"> >> </a>
+      <a class="navigate-btn" (click)="exit()"> X </a>
+    </div>
+  </div>`,
 })
-export class FwylTourComponent implements OnInit {
+export class MmTourComponent implements OnInit {
   @Input() title: string;
   @Input() selector: string;
   @Input() order: number;

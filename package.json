@@ -1,0 +1,56 @@
+{
+  "name": "angular-custom-tour",
+  "description": "Custom angular tours",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miraxes/"
+  },
+  "version": "0.0.2",
+  "license": "MIT",
+  "main": "bundles/angular-custom-tour.umd.min.js",
+  "module": "index.js",
+  "typings": "index.d.ts",
+  "scripts": {
+    "tslint": "tslint",
+    "lint": "npm run tslint \"src/**/*.ts\" && npm run tslint \"server/**/*.ts\"",
+    "server": "npm run server:dev",
+    "server:dev": "webpack-dev-server --config config/webpack.dev.js --progress --profile --watch",
+    "server:dev:hmr": "npm run server:dev -- --inline --hot",
+    "build": "npm run clean && webpack --config config/webpack.prod.js --progress --profile --bail",
+    "umd": "rm -rf bundles && webpack --config config/webpack.umd.js --progress --profile --bail",
+    "clean": "rm -rf docs",
+    "start": "npm run server:dev:hmr",
+    "ngc": "ngc"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@angular/common": "^4.0.3",
+    "@angular/compiler": "^4.0.3",
+    "@angular/compiler-cli": "^4.0.3",
+    "@angular/core": "^4.0.3",
+    "@angular/forms": "^4.0.3",
+    "@angular/platform-browser": "^4.0.3",
+    "@angular/platform-browser-dynamic": "^4.0.3",
+    "@angular/router": "^4.0.3",
+    "@types/core-js": "^0.9.41",
+    "@types/node": "^7.0.13",
+    "@types/webpack": "^2.2.15",
+    "angular2-template-loader": "^0.6.2",
+    "ts-loader": "~2.0.3",
+    "codelyzer": "~3.0.0",
+    "core-js": "^2.4.1",
+    "css-loader": "^0.28.0",
+    "html-webpack-plugin": "^2.28.0",
+    "raw-loader": "^0.5.1",
+    "rxjs": "^5.3.0",
+    "style-loader": "^0.16.1",
+    "tslint": "^5.1.0",
+    "typescript": "2.2.2",
+    "typescript-formatter": "^5.1.3",
+    "webpack": "~2.4.1",
+    "webpack-dev-server": "~2.4.4",
+    "webpack-merge": "^4.1.0",
+    "zone.js": "^0.8.9"
+  }
+}

@@ -17,7 +17,6 @@ import { HintService } from '../../src/hint.service';
 export class AppComponent implements OnInit {
 
   constructor(public hintService: HintService){
-    console.log('this.hintService', this.hintService);
   }
   ngOnInit() { }
 

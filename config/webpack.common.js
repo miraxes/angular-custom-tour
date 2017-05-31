@@ -17,22 +17,22 @@ function webpackConfig() {
     },
 
     module: {
-      rules: [{ 
-        test: /\.ts$/, 
+      rules: [{
+        test: /\.ts$/,
         use: [
-          'ts-loader', 
+          'ts-loader',
           'angular2-template-loader'
-        ], 
-        exclude: [/\.(spec|e2e)\.ts$/] 
+        ],
+        exclude: [/\.(spec|e2e)\.ts$/]
       },
         // See: https://github.com/webpack/raw-loader
-      { 
-        test: /\.html$/, 
-        use: 'raw-loader', 
-        exclude: [path.resolve(__dirname, 'server/index.html')] 
+      {
+        test: /\.html$/,
+        use: 'raw-loader',
+        exclude: [path.resolve(__dirname, 'server/index.html')]
       },
-      { 
-        test: /\.css$/, 
+      {
+        test: /\.css$/,
         use: 'raw-loader'
       }]
     },

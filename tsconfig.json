@@ -1,4 +1,4 @@
-{
+/*{
     "compilerOptions": {
         "noImplicitAny": true,
         "module": "commonjs",
@@ -14,4 +14,43 @@
     "exclude": [
         "node_modules"
     ]
+}*/
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "es2015",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "noUnusedLocals": true,
+    "moduleResolution": "node",
+    "baseUrl": "./src",
+    "paths": {},
+    "lib": [
+      "es2015",
+      "dom"
+    ],
+    "types": [
+      "core-js",
+      "node",
+      "webpack",
+      "simplemde"
+    ]
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "awesomeTypescriptLoaderOptions": {
+    "forkChecker": true,
+    "useWebpackText": true
+  },
+  "angularCompilerOptions": {
+    "strictMetadataEmit": true,
+    "skipTemplateCodegen": true
+  },
+  "compileOnSave": false,
+  "buildOnSave": false,
+  "atom": {
+    "rewriteTsconfig": false
+  }
 }

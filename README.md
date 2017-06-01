@@ -80,7 +80,7 @@ Also you need to inject styles from `styles/main.css`
 Colons can be used to align columns.
 
 | option                     | default   | Usage  |
-| -------------------------- |:---------:| -----:|
+| -------------------------- |:---------:| ------ |
 | elementsDisabled: boolean  | true      | Disabling highlightedElement (click) wont work|
 | defaultPosition: string    | 'bottom'  | Position of tour step to highlightedElement |
 | defaultOrder: number       | 99        | Order of showing steps |

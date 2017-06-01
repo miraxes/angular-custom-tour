@@ -2,14 +2,21 @@
   position: absolute !important;
   background-color: #fff;
   z-index: 999;
+  text-align: center;
   font-size: 14px;
   color: #000;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0px 0px 30px 0px rgba(0,0,0,0.5);
+  box-shadow: inset 0px 0px 30px 0px rgba(0,0,0,0.5);
 }
 
 .intro-tour-hint-wrapper .header {
   padding: 10px;
   border-bottom: 1px solid #ccc;
   background-color: #ddd;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0px 0px 30px 0px rgba(0,0,0,0.5);
+  box-shadow: inset 0px 0px 30px 0px rgba(0,0,0,0.5);
 }
 
 .intro-tour-hint-wrapper .content {
@@ -33,6 +40,7 @@
   text-align: center;
   display: inline-block;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .intro-tour-hint-wrapper .navigate-btn:first {
@@ -76,5 +84,4 @@
 
 .hint-relative {
   position: relative;
-  background-color: #fff;
 }

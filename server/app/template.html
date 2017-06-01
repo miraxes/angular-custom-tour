@@ -1,50 +1,71 @@
 <div class="content">
   <hint></hint>
-  <p>angular-custom-tour app 11</p>
-
-  <button  name="button" (click)="startTour()" id="demo3"> START!</button>
-  <p id="demo4">angular-custom-tour app success</p>
-  <p>angular-custom-tour app success</p>
-  <p>angular-custom-tour app success</p>
-  <p>angular-custom-tour app success</p>
+  <h1>angular-custom-tour DEMO</h1>
+  <a  class="btn btn-default" (click)="startTour()" id="demo3">BOOT TEST</a>
+    If you want to put ANYTHING inside your tour steps, this plugin creted just for <span id="demo4" style="background-color:#fff">YOU!</span>
 
 
+    <table class="table table-striped">
+      <thead>
+        <th></th>
+        <th>Demo</th>
+        <th>Table</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>colorito</td>
+          <td class="active" id="demo2" >blue one</td>
+          <td class="success">wtf one</td>
+        </tr>
+        <tr>
+          <td class="info">bangito</td>
+          <td class="warning">red one</td>
+          <td class="danger" id="demo1" >green one</td>
+        </tr>
+        <tr>
+          <td class="info">bangito</td>
+          <td class="warning">red one</td>
+          <td class="danger" id="demo1" >green one</td>
+        </tr>
+        <tr>
+          <td class="info">bangito</td>
+          <td class="warning">red one</td>
+          <td class="danger" id="demo1" >green one</td>
+        </tr>
 
-
-  <h1 id="demo1">asdasd 123 12312</h1>
-  <h1>asdasd 123 12312</h1>
-  <h1>asdasd 123 12312</h1>
-
-
-
-
-  <h1>asdasd 123 12312</h1>
-
-  <h1>asdasd 123 12312</h1>
-
-
-
-  <h4 id="demo2" >sadasdasd</h4>
-
-
-  <h1>asdasd 123 12312</h1>
-
+      </tbody>
+    </table>
   <tour-step selector="demo3" order="3" position="right">
-    <button>test button</button>
-    <p>on the left</p>
+    <button type="button" class="btn btn-default">Default</button>
+    <button type="button" class="btn btn-primary">Primary</button>
+    <button type="button" class="btn btn-success">Success</button>
+    <button type="button" class="btn btn-info">Info</button>
+    <button type="button" class="btn btn-warning">Warning</button>
+    <button type="button" class="btn btn-danger">Danger</button>
+    <button type="button" class="btn btn-link">Link</button>
   </tour-step>
 
-  <tour-step selector="demo2" order="2" position="bottom">
+  <tour-step selector="demo2" order="2" position="right">
     <h2>TOP</h2>
-    I'm on top of the world
+    I'm on top of the <a href="https://google.com.ua" target="_blank">google</a>
   </tour-step>
 
-  <tour-step title="wow" selector="demo4" order="4" >
-    I can have a title
+  <tour-step title="Your photo here" selector="demo4" order="4" >
+    <img src="https://www.google.com.ua/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="what">
   </tour-step>
 
   <tour-step selector="demo1" order="1" >
-    How I can look
+    <form class="form-inline">
+      <div class="form-group">
+        <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+        <div class="input-group">
+          <div class="input-group-addon">$</div>
+          <input type="text" class="form-control" id="exampleInputAmount" placeholder="Amount">
+          <div class="input-group-addon">.00</div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Transfer cash</button>
+    </form>
   </tour-step>
 
 </div>

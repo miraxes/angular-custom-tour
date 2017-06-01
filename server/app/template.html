@@ -1,34 +1,36 @@
 <div class="content">
   <hint></hint>
   <h1>angular-custom-tour DEMO</h1>
-  <a  class="btn btn-default" (click)="startTour()" id="demo3">BOOT TEST</a>
-    If you want to put ANYTHING inside your tour steps, this plugin creted just for <span id="demo4" style="background-color:#fff">YOU!</span>
+  <a  class="btn btn-default" (click)="startTour()" id="demo3">Start tour</a>
+    If you want to put ANYTHING inside your tour steps, this plugin created just for <span id="demo4" style="background-color:#fff">YOU!</span>
+
+    <h3> Here is default bootstrap table</h3>
     <table class="table table-striped">
       <thead>
-        <th></th>
-        <th>Demo</th>
-        <th>Table</th>
+        <th> Blue</th>
+        <th>Yellow</th>
+        <th class="success">Red</th>
       </thead>
       <tbody>
         <tr>
-          <td>colorito</td>
-          <td class="active" id="demo2" >blue one</td>
-          <td class="success">wtf one</td>
+          <td class="info">blue one</td>
+          <td class="warning">yellow one</td>
+          <td class="danger" >red one</td>
         </tr>
         <tr>
-          <td class="info">bangito</td>
-          <td class="warning">red one</td>
-          <td class="danger" id="demo1" >green one</td>
+          <td class="info">blue one</td>
+          <td class="warning" id="demo2">yellow one</td>
+          <td class="danger"  >red one</td>
         </tr>
         <tr>
-          <td class="info">bangito</td>
-          <td class="warning">red one</td>
-          <td class="danger" id="demo1" >green one</td>
+          <td class="info">blue one</td>
+          <td class="warning">yellow one</td>
+          <td class="danger" >red one</td>
         </tr>
         <tr>
-          <td class="info">bangito</td>
-          <td class="warning">red one</td>
-          <td class="danger" id="demo1" >green one</td>
+          <td class="info">blue one</td>
+          <td class="warning" id="demo5">yellow one</td>
+          <td class="danger" id="demo1" >red one</td>
         </tr>
 
       </tbody>
@@ -42,13 +44,17 @@
     <button type="button" class="btn btn-danger">Danger</button>
     <button type="button" class="btn btn-link">Link</button>
   </tour-step>
-  <tour-step selector="demo2" order="2" position="right">
+  <tour-step selector="demo2" order="2" position="top">
     <h2>TOP</h2>
     I'm on top of the <a href="https://google.com.ua" target="_blank">google</a>
   </tour-step>
 
   <tour-step title="Your photo here" selector="demo4" order="4" >
     <img src="https://www.google.com.ua/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="what">
+  </tour-step>
+
+  <tour-step title="Thanks" selector="demo5" order="8" >
+    <a class="btn btn-link" href="https://github.com/miraxes/angular-custom-tour">Back to github</a>
   </tour-step>
 
   <tour-step selector="demo1" order="1" >

@@ -1,4 +1,4 @@
-/*{
+{
     "compilerOptions": {
         "noImplicitAny": true,
         "module": "commonjs",
@@ -14,8 +14,8 @@
     "exclude": [
         "node_modules"
     ]
-}*/
-{
+}
+/*{
   "compilerOptions": {
     "target": "es5",
     "module": "es2015",
@@ -53,4 +53,4 @@
   "atom": {
     "rewriteTsconfig": false
   }
-}
+}*/

@@ -14,6 +14,25 @@
 
   * install `npm install angular-custom-tour --save`
 
+In your module (app.module.ts)
+  ```typescript
+  import { HintModule } from 'angular-custom-tour'
+
+  @NgModule({
+    declarations: [
+      ...
+      ],
+    imports: [
+    ...
+    HintModule // Put here
+    ...
+    ],
+    entryComponents: [
+      ...
+    ]
+  ]
+  ```
+In your page component
   ```typescript
   import { HintService } from 'angular-custom-tour'
 
@@ -30,7 +49,7 @@
 
   ```html
   <!-- Bluring element insert on top of the page-->
-  <mm-hint></mm-hint>
+  <hint></hint>
 
   <!-- start TOUR -->
   <button name="button" (click)="startTour()"> START!</button>
@@ -38,9 +57,9 @@
   <!-- Each step could be placed at ANYWHERE -->
   <div class="i-want-highlight-this" id="highlight-me"> WOW!</div>
 
-  <mm-intro-tour selector="highlight-me" order="3" position="right" title="title string">
+  <tour-step selector="highlight-me" order="3" position="right" title="title string">
     <!-- ANY HTML HERE
       NOTE: ONLY selector attribute is required! others is up to you
     -->
-  </mm-intro-tour>
+  </tour-step>
   ```

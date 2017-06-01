@@ -14,7 +14,7 @@ import { HintConfig } from '../variables';
     </div>
   </div>`,
 })
-export class MmTourComponent implements OnInit {
+export class TourComponent implements OnInit {
   @Input() title: string;
   @Input() selector: string;
   @Input() order: number;

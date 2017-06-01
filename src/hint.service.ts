@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
-import { MmTourComponent } from './intro-tour/tour.component';
+import { TourComponent } from './intro-tour/tour.component';
 import { HintOptions } from './options';
 import { HintConfig } from './variables';
 
@@ -14,7 +14,7 @@ export class HintService {
   currentStep: Step;
   steps: Step[];
   hintOptions: HintOptions;
-  anchors: { [selector: string]: MmTourComponent } = {};
+  anchors: { [selector: string]: TourComponent } = {};
   overlay$: Subject<boolean> = new Subject();
   registration$: Subject<boolean> = new Subject();
 
@@ -72,9 +72,9 @@ export class HintService {
    * Register hint component
    * @method register
    * @param  {string}            selector  binded to
-   * @param  {MmTourComponent} component itself
+   * @param  {TourComponent} component itself
    */
-  public register(selector: string, component: MmTourComponent): void {
+  public register(selector: string, component: TourComponent): void {
     if (this.anchors[selector]) {
       throw 'selector ' + selector + ' already registered!';
     }

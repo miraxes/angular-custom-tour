@@ -1,18 +1,18 @@
 import { HintService } from './hint.service';
 import { CommonModule } from '@angular/common';
 import { ModuleWithProviders, NgModule } from '@angular/core';
-import { MmHintComponent } from './hint.component';
-import { MmTourComponent } from './intro-tour/tour.component';
+import { HintComponent } from './hint.component';
+import { TourComponent } from './intro-tour/tour.component';
 
 @NgModule({
-    declarations: [MmHintComponent, MmTourComponent],
-    exports: [MmHintComponent, MmTourComponent],
+    declarations: [HintComponent, TourComponent],
+    exports: [HintComponent, TourComponent],
     imports: [CommonModule],
 })
-export class MmHintModule {
+export class HintModule {
     public static forRoot(): ModuleWithProviders {
         return {
-            ngModule: MmHintModule,
+            ngModule: HintModule,
             providers: [
                 HintService,
             ],

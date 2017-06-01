@@ -45,8 +45,7 @@ export class TourComponent implements OnInit {
       this.disableClick(highlightedElement);
     }
     if (this.hintService.hintOptions.applyRelative) {
-      highlightedElement.style.position = 'relative';
-      highlightedElement.style.backgroundColor = '#fff';
+      highlightedElement.classList.add('hint-relative');
     }
     this.showme = true;
     this.hasNext = this.hintService.hasNext();
@@ -81,6 +80,8 @@ export class TourComponent implements OnInit {
     let highlightedElement = document.getElementById(this.selector);
     highlightedElement.style.zIndex = '0';
     this.showme = false;
+    this.enableClick(highlightedElement);
+    highlightedElement.classList.remove('hint-relative');
   }
 
   exit(): void {
@@ -99,6 +100,9 @@ export class TourComponent implements OnInit {
 
   private disableClick(element: HTMLElement): void {
     element.classList.add('hint-disabled');
+  }
+  private enableClick(element: HTMLElement): void {
+    element.classList.remove('hint-disabled');
   }
 
 }

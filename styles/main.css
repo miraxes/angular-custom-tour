@@ -1,6 +1,3 @@
-body {
-  margin: 20px;
-}
 .intro-tour-hint-wrapper {
   position: absolute !important;
   background-color: #fff;
@@ -75,4 +72,9 @@ body {
   z-index: 20;
   top: 0;
   left: 0;
+}
+
+.hint-relative {
+  position: relative;
+  background-color: #fff;
 }

@@ -11,6 +11,7 @@ import { HintService } from '../../src/hint.service';
   templateUrl: './template.html',
   providers: [HintService],
   styleUrls: [
+    '../../styles/main.css',
     './style.css'
   ]
 })

@@ -138,4 +138,8 @@ export class HintService {
     });
   }
 
+  private putOverlay(): void {
+    document.getElementsByTagName('body');
+  }
+
 }

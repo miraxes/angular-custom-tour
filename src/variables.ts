@@ -5,5 +5,5 @@ export const HintConfig = {
   Z_INDEX: '999',
   DEFAULT_ORDER: 99,
   DEFAULT_PX_LAYER: 15,
-  APPLY_RELATIVE: true,
+  APPLY_RELATIVE: false,
 };

@@ -52377,9 +52377,7 @@ var AppComponent = (function () {
     }
     AppComponent.prototype.ngOnInit = function () { };
     AppComponent.prototype.startTour = function () {
-        this.hintService.initialize({
-            applyRelative: true
-        });
+        this.hintService.initialize();
     };
     return AppComponent;
 }());
@@ -52739,4 +52737,4 @@ exports.HintOptions = HintOptions;
 
 /***/ })
 ],[131]);
-//# sourceMappingURL=main.295598f5994a778a2b9b.js.map
+//# sourceMappingURL=main.98cea4bec303aac4cdd5.js.map

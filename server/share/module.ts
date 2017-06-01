@@ -3,16 +3,16 @@ import {
   ModuleWithProviders
 } from '@angular/core'
 import { CommonModule } from '@angular/common'
-import { MmHintModule } from '../../src'
+import { HintModule } from '../../src'
 
 @NgModule({
   imports: [
     CommonModule,
-    MmHintModule
+    HintModule
   ],
   exports: [
     CommonModule,
-    MmHintModule
+    HintModule
   ]
 })
 export class ShareModule {

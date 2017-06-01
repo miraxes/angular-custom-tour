@@ -22,6 +22,8 @@ export class AppComponent implements OnInit {
   ngOnInit() { }
 
   startTour() {
-    this.hintService.initialize();
+    this.hintService.initialize({
+      applyRelative: true
+    });
   }
 }

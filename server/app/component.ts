@@ -4,6 +4,7 @@ import {
   OnInit
 } from '@angular/core'
 import { HintService } from '../../src/hint.service';
+import { HintOptions } from '../../src/options';
 
 @Component({
   selector: 'angular-custom-tour-app',
@@ -22,6 +23,8 @@ export class AppComponent implements OnInit {
   ngOnInit() { }
 
   startTour() {
-    this.hintService.initialize();
+    let hOpt = new HintOptions();
+    hOpt.elementsDisabled = false;
+    this.hintService.initialize(hOpt);
   }
 }

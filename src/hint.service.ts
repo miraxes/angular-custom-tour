@@ -26,6 +26,7 @@ export class HintService {
    */
   public initialize(options: HintOptions = new HintOptions()): void {
     this.hintOptions = options;
+    console.log('this.hintOptions', this.hintOptions);
     let nodes = document.getElementsByTagName(HintConfig.HINT_TAG);
     this.steps = this.initSteps(nodes);
     this.startAt(0);

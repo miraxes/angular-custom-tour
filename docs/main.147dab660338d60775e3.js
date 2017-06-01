@@ -7,9 +7,9 @@ webpackJsonp([0],[
 /* WEBPACK VAR INJECTION */(function(global) {Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_merge__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_merge__ = __webpack_require__(116);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_merge___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_observable_merge__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operator_share__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operator_share__ = __webpack_require__(120);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operator_share___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_operator_share__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Subject__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Subject__);
@@ -14394,7 +14394,7 @@ function transition$$1(stateChangeExpr, steps) {
 "use strict";
 
 var root_1 = __webpack_require__(14);
-var toSubscriber_1 = __webpack_require__(127);
+var toSubscriber_1 = __webpack_require__(128);
 var observable_1 = __webpack_require__(57);
 /**
  * A representation of any set of values over any amount of time. This the most basic building block
@@ -18879,8 +18879,8 @@ var __extends = (this && this.__extends) || function (d, b) {
 var Observable_1 = __webpack_require__(7);
 var Subscriber_1 = __webpack_require__(13);
 var Subscription_1 = __webpack_require__(23);
-var ObjectUnsubscribedError_1 = __webpack_require__(121);
-var SubjectSubscription_1 = __webpack_require__(110);
+var ObjectUnsubscribedError_1 = __webpack_require__(122);
+var SubjectSubscription_1 = __webpack_require__(111);
 var rxSubscriber_1 = __webpack_require__(40);
 /**
  * @class SubjectSubscriber<T>
@@ -19045,12 +19045,12 @@ exports.AnonymousSubject = AnonymousSubject;
 
 "use strict";
 
-var isArray_1 = __webpack_require__(123);
+var isArray_1 = __webpack_require__(124);
 var isObject_1 = __webpack_require__(60);
 var isFunction_1 = __webpack_require__(59);
-var tryCatch_1 = __webpack_require__(128);
+var tryCatch_1 = __webpack_require__(129);
 var errorObject_1 = __webpack_require__(58);
-var UnsubscriptionError_1 = __webpack_require__(122);
+var UnsubscriptionError_1 = __webpack_require__(123);
 /**
  * Represents a disposable resource, such as the execution of an Observable. A
  * Subscription has one important method, `unsubscribe`, that takes no argument
@@ -19253,7 +19253,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(1);
 var Subject_1 = __webpack_require__(22);
-var options_1 = __webpack_require__(138);
+var options_1 = __webpack_require__(62);
 var variables_1 = __webpack_require__(41);
 var HintService = (function () {
     function HintService() {
@@ -19270,6 +19270,7 @@ var HintService = (function () {
     HintService.prototype.initialize = function (options) {
         if (options === void 0) { options = new options_1.HintOptions(); }
         this.hintOptions = options;
+        console.log('this.hintOptions', this.hintOptions);
         var nodes = document.getElementsByTagName(variables_1.HintConfig.HINT_TAG);
         this.steps = this.initSteps(nodes);
         this.startAt(0);
@@ -24070,11 +24071,32 @@ exports.isScheduler = isScheduler;
 
 /***/ }),
 /* 62 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var variables_1 = __webpack_require__(41);
+var HintOptions = (function () {
+    function HintOptions() {
+        this.elementsDisabled = true;
+        this.defaultPosition = variables_1.HintConfig.DEFAULT_POSITION;
+        this.defaultOrder = variables_1.HintConfig.DEFAULT_ORDER;
+        this.defaultLayer = variables_1.HintConfig.DEFAULT_PX_LAYER;
+        this.applyRelative = variables_1.HintConfig.APPLY_RELATIVE;
+    }
+    return HintOptions;
+}());
+exports.HintOptions = HintOptions;
+
+
+/***/ }),
+/* 63 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_compiler__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_compiler__ = __webpack_require__(68);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__ = __webpack_require__(44);
@@ -24256,8 +24278,8 @@ var platformBrowserDynamic = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__
 
 
 /***/ }),
-/* 63 */,
-/* 64 */
+/* 64 */,
+/* 65 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -24447,7 +24469,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24456,12 +24478,12 @@ function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
 Object.defineProperty(exports, "__esModule", { value: true });
-__export(__webpack_require__(130));
+__export(__webpack_require__(131));
 
 
 /***/ }),
-/* 66 */,
-/* 67 */
+/* 67 */,
+/* 68 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -51077,7 +51099,6 @@ var ImportResolver = (function () {
 //# sourceMappingURL=compiler.es5.js.map
 
 /***/ }),
-/* 68 */,
 /* 69 */,
 /* 70 */,
 /* 71 */,
@@ -51114,25 +51135,26 @@ var ImportResolver = (function () {
 /* 102 */,
 /* 103 */,
 /* 104 */,
-/* 105 */
+/* 105 */,
+/* 106 */
 /***/ (function(module, exports) {
 
 module.exports = "body {\n  padding: 25px;\n  background-color: #fff;\n  position: relative;\n}\n"
 
 /***/ }),
-/* 106 */
+/* 107 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"content\">\n  <hint></hint>\n  <h1>angular-custom-tour DEMO</h1>\n  <a  class=\"btn btn-default\" (click)=\"startTour()\" id=\"demo3\">BOOT TEST</a>\n    If you want to put ANYTHING inside your tour steps, this plugin creted just for <span id=\"demo4\" style=\"background-color:#fff\">YOU!</span>\n\n\n    <table class=\"table table-striped\">\n      <thead>\n        <th></th>\n        <th>Demo</th>\n        <th>Table</th>\n      </thead>\n      <tbody>\n        <tr>\n          <td>colorito</td>\n          <td class=\"active\" id=\"demo2\" >blue one</td>\n          <td class=\"success\">wtf one</td>\n        </tr>\n        <tr>\n          <td class=\"info\">bangito</td>\n          <td class=\"warning\">red one</td>\n          <td class=\"danger\" id=\"demo1\" >green one</td>\n        </tr>\n        <tr>\n          <td class=\"info\">bangito</td>\n          <td class=\"warning\">red one</td>\n          <td class=\"danger\" id=\"demo1\" >green one</td>\n        </tr>\n        <tr>\n          <td class=\"info\">bangito</td>\n          <td class=\"warning\">red one</td>\n          <td class=\"danger\" id=\"demo1\" >green one</td>\n        </tr>\n\n      </tbody>\n    </table>\n  <tour-step selector=\"demo3\" order=\"3\" position=\"right\">\n    <button type=\"button\" class=\"btn btn-default\">Default</button>\n    <button type=\"button\" class=\"btn btn-primary\">Primary</button>\n    <button type=\"button\" class=\"btn btn-success\">Success</button>\n    <button type=\"button\" class=\"btn btn-info\">Info</button>\n    <button type=\"button\" class=\"btn btn-warning\">Warning</button>\n    <button type=\"button\" class=\"btn btn-danger\">Danger</button>\n    <button type=\"button\" class=\"btn btn-link\">Link</button>\n  </tour-step>\n\n  <tour-step selector=\"demo2\" order=\"2\" position=\"right\">\n    <h2>TOP</h2>\n    I'm on top of the <a href=\"https://google.com.ua\" target=\"_blank\">google</a>\n  </tour-step>\n\n  <tour-step title=\"Your photo here\" selector=\"demo4\" order=\"4\" >\n    <img src=\"https://www.google.com.ua/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png\" alt=\"what\">\n  </tour-step>\n\n  <tour-step selector=\"demo1\" order=\"1\" >\n    <form class=\"form-inline\">\n      <div class=\"form-group\">\n        <label class=\"sr-only\" for=\"exampleInputAmount\">Amount (in dollars)</label>\n        <div class=\"input-group\">\n          <div class=\"input-group-addon\">$</div>\n          <input type=\"text\" class=\"form-control\" id=\"exampleInputAmount\" placeholder=\"Amount\">\n          <div class=\"input-group-addon\">.00</div>\n        </div>\n      </div>\n      <button type=\"submit\" class=\"btn btn-primary\">Transfer cash</button>\n    </form>\n  </tour-step>\n\n</div>\n"
+module.exports = "<div class=\"content\">\n  <hint></hint>\n  <h1>angular-custom-tour DEMO</h1>\n  <a  class=\"btn btn-default\" (click)=\"startTour()\" id=\"demo3\">BOOT TEST</a>\n    If you want to put ANYTHING inside your tour steps, this plugin creted just for <span id=\"demo4\" style=\"background-color:#fff\">YOU!</span>\n    <table class=\"table table-striped\">\n      <thead>\n        <th></th>\n        <th>Demo</th>\n        <th>Table</th>\n      </thead>\n      <tbody>\n        <tr>\n          <td>colorito</td>\n          <td class=\"active\" id=\"demo2\" >blue one</td>\n          <td class=\"success\">wtf one</td>\n        </tr>\n        <tr>\n          <td class=\"info\">bangito</td>\n          <td class=\"warning\">red one</td>\n          <td class=\"danger\" id=\"demo1\" >green one</td>\n        </tr>\n        <tr>\n          <td class=\"info\">bangito</td>\n          <td class=\"warning\">red one</td>\n          <td class=\"danger\" id=\"demo1\" >green one</td>\n        </tr>\n        <tr>\n          <td class=\"info\">bangito</td>\n          <td class=\"warning\">red one</td>\n          <td class=\"danger\" id=\"demo1\" >green one</td>\n        </tr>\n\n      </tbody>\n    </table>\n  <tour-step selector=\"demo3\" order=\"3\" position=\"right\">\n    <button type=\"button\" class=\"btn btn-default\">Default</button>\n    <button type=\"button\" class=\"btn btn-primary\">Primary</button>\n    <button type=\"button\" class=\"btn btn-success\">Success</button>\n    <button type=\"button\" class=\"btn btn-info\">Info</button>\n    <button type=\"button\" class=\"btn btn-warning\">Warning</button>\n    <button type=\"button\" class=\"btn btn-danger\">Danger</button>\n    <button type=\"button\" class=\"btn btn-link\">Link</button>\n  </tour-step>\n  <tour-step selector=\"demo2\" order=\"2\" position=\"right\">\n    <h2>TOP</h2>\n    I'm on top of the <a href=\"https://google.com.ua\" target=\"_blank\">google</a>\n  </tour-step>\n\n  <tour-step title=\"Your photo here\" selector=\"demo4\" order=\"4\" >\n    <img src=\"https://www.google.com.ua/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png\" alt=\"what\">\n  </tour-step>\n\n  <tour-step selector=\"demo1\" order=\"1\" >\n    <form class=\"form-inline\">\n      <div class=\"form-group\">\n        <label class=\"sr-only\" for=\"exampleInputAmount\">Amount (in dollars)</label>\n        <div class=\"input-group\">\n          <div class=\"input-group-addon\">$</div>\n          <input type=\"text\" class=\"form-control\" id=\"exampleInputAmount\" placeholder=\"Amount\">\n          <div class=\"input-group-addon\">.00</div>\n        </div>\n      </div>\n      <button type=\"submit\" class=\"btn btn-primary\">Transfer cash</button>\n    </form>\n  </tour-step>\n\n</div>\n"
 
 /***/ }),
-/* 107 */
+/* 108 */
 /***/ (function(module, exports) {
 
 module.exports = ".intro-tour-hint-wrapper {\n  position: absolute !important;\n  background-color: #fff;\n  z-index: 999;\n  text-align: center;\n  font-size: 14px;\n  color: #000;\n  border-radius: 5px;\n  -webkit-box-shadow: inset 0px 0px 30px 0px rgba(0,0,0,0.5);\n  box-shadow: inset 0px 0px 30px 0px rgba(0,0,0,0.5);\n}\n\n.intro-tour-hint-wrapper .header {\n  padding: 10px;\n  border-bottom: 1px solid #ccc;\n  background-color: #ddd;\n  border-radius: 5px;\n  -webkit-box-shadow: inset 0px 0px 30px 0px rgba(0,0,0,0.5);\n  box-shadow: inset 0px 0px 30px 0px rgba(0,0,0,0.5);\n}\n\n.intro-tour-hint-wrapper .content {\n  padding: 10px;\n}\n\n.intro-tour-hint-wrapper .footer {\n  padding: 10px;\n}\n\n.intro-tour-hint-wrapper .navigate-btn {\n  background-color: #ddd;\n  box-shadow: 0 0 15px rgba(0, 0, 0, .7);\n  color: #5343db;\n  border-radius: 50%;\n  height: 30px;\n  width: 30px;\n  margin-left: 7px;\n  font-size: 18px;\n  line-height: 30px;\n  text-align: center;\n  display: inline-block;\n  cursor: pointer;\n  text-decoration: none;\n}\n\n.intro-tour-hint-wrapper .navigate-btn:first {\n  margin-left: 0;\n}\n\n.intro-tour-hint-wrapper.transformX_50.transformY_100 {\n  -webkit-transform: translateX(-50%) translateY(-100%);\n  transform: translateX(-50%) translateY(-100%);\n}\n\n.intro-tour-hint-wrapper.transformX_50 {\n  -webkit-transform: translateX(-50%);\n  transform: translateX(-50%);\n}\n\n.intro-tour-hint-wrapper.transformY_50 {\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n}\n\n.intro-tour-hint-wrapper.transformY_50.transformX_100 {\n  -webkit-transform: translateX(-100%) translateY(-50%);\n  transform: translateX(-100%) translateY(-50%);\n}\n\n.hint-disabled {\n  pointer-events: none;\n  cursor: default;\n}\n\n.hint-overlay {\n  position: fixed;\n  width: 100%;\n  height: 100%;\n  background: rgba(0, 0, 0, .5);\n  z-index: 20;\n  top: 0;\n  left: 0;\n}\n\n.hint-relative {\n  position: relative;\n}\n"
 
 /***/ }),
-/* 108 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51174,7 +51196,7 @@ exports.InnerSubscriber = InnerSubscriber;
 //# sourceMappingURL=InnerSubscriber.js.map
 
 /***/ }),
-/* 109 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51210,7 +51232,7 @@ exports.OuterSubscriber = OuterSubscriber;
 //# sourceMappingURL=OuterSubscriber.js.map
 
 /***/ }),
-/* 110 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51256,7 +51278,7 @@ exports.SubjectSubscription = SubjectSubscription;
 //# sourceMappingURL=SubjectSubscription.js.map
 
 /***/ }),
-/* 111 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51267,8 +51289,8 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Observable_1 = __webpack_require__(7);
-var ScalarObservable_1 = __webpack_require__(114);
-var EmptyObservable_1 = __webpack_require__(113);
+var ScalarObservable_1 = __webpack_require__(115);
+var EmptyObservable_1 = __webpack_require__(114);
 var isScheduler_1 = __webpack_require__(61);
 /**
  * We need this JSDoc comment for affecting ESDoc.
@@ -51384,7 +51406,7 @@ exports.ArrayObservable = ArrayObservable;
 //# sourceMappingURL=ArrayObservable.js.map
 
 /***/ }),
-/* 112 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51559,7 +51581,7 @@ var RefCountSubscriber = (function (_super) {
 //# sourceMappingURL=ConnectableObservable.js.map
 
 /***/ }),
-/* 113 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51646,7 +51668,7 @@ exports.EmptyObservable = EmptyObservable;
 //# sourceMappingURL=EmptyObservable.js.map
 
 /***/ }),
-/* 114 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51710,24 +51732,24 @@ exports.ScalarObservable = ScalarObservable;
 //# sourceMappingURL=ScalarObservable.js.map
 
 /***/ }),
-/* 115 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var merge_1 = __webpack_require__(116);
-exports.merge = merge_1.mergeStatic;
-//# sourceMappingURL=merge.js.map
-
-/***/ }),
 /* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
+var merge_1 = __webpack_require__(117);
+exports.merge = merge_1.mergeStatic;
+//# sourceMappingURL=merge.js.map
+
+/***/ }),
+/* 117 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
 var Observable_1 = __webpack_require__(7);
-var ArrayObservable_1 = __webpack_require__(111);
-var mergeAll_1 = __webpack_require__(117);
+var ArrayObservable_1 = __webpack_require__(112);
+var mergeAll_1 = __webpack_require__(118);
 var isScheduler_1 = __webpack_require__(61);
 /* tslint:enable:max-line-length */
 /**
@@ -51871,7 +51893,7 @@ exports.mergeStatic = mergeStatic;
 //# sourceMappingURL=merge.js.map
 
 /***/ }),
-/* 117 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51881,8 +51903,8 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var OuterSubscriber_1 = __webpack_require__(109);
-var subscribeToResult_1 = __webpack_require__(126);
+var OuterSubscriber_1 = __webpack_require__(110);
+var subscribeToResult_1 = __webpack_require__(127);
 /**
  * Converts a higher-order Observable into a first-order Observable which
  * concurrently delivers all values that are emitted on the inner Observables.
@@ -51988,12 +52010,12 @@ exports.MergeAllSubscriber = MergeAllSubscriber;
 //# sourceMappingURL=mergeAll.js.map
 
 /***/ }),
-/* 118 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var ConnectableObservable_1 = __webpack_require__(112);
+var ConnectableObservable_1 = __webpack_require__(113);
 /* tslint:enable:max-line-length */
 /**
  * Returns an Observable that emits the results of invoking a specified selector on items
@@ -52051,12 +52073,12 @@ exports.MulticastOperator = MulticastOperator;
 //# sourceMappingURL=multicast.js.map
 
 /***/ }),
-/* 119 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var multicast_1 = __webpack_require__(118);
+var multicast_1 = __webpack_require__(119);
 var Subject_1 = __webpack_require__(22);
 function shareSubjectFactory() {
     return new Subject_1.Subject();
@@ -52081,7 +52103,7 @@ exports.share = share;
 //# sourceMappingURL=share.js.map
 
 /***/ }),
-/* 120 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52125,7 +52147,7 @@ exports.$$iterator = exports.iterator;
 //# sourceMappingURL=iterator.js.map
 
 /***/ }),
-/* 121 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52158,7 +52180,7 @@ exports.ObjectUnsubscribedError = ObjectUnsubscribedError;
 //# sourceMappingURL=ObjectUnsubscribedError.js.map
 
 /***/ }),
-/* 122 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52189,7 +52211,7 @@ exports.UnsubscriptionError = UnsubscriptionError;
 //# sourceMappingURL=UnsubscriptionError.js.map
 
 /***/ }),
-/* 123 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52198,7 +52220,7 @@ exports.isArray = Array.isArray || (function (x) { return x && typeof x.length =
 //# sourceMappingURL=isArray.js.map
 
 /***/ }),
-/* 124 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52207,7 +52229,7 @@ exports.isArrayLike = (function (x) { return x && typeof x.length === 'number'; 
 //# sourceMappingURL=isArrayLike.js.map
 
 /***/ }),
-/* 125 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52219,18 +52241,18 @@ exports.isPromise = isPromise;
 //# sourceMappingURL=isPromise.js.map
 
 /***/ }),
-/* 126 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var root_1 = __webpack_require__(14);
-var isArrayLike_1 = __webpack_require__(124);
-var isPromise_1 = __webpack_require__(125);
+var isArrayLike_1 = __webpack_require__(125);
+var isPromise_1 = __webpack_require__(126);
 var isObject_1 = __webpack_require__(60);
 var Observable_1 = __webpack_require__(7);
-var iterator_1 = __webpack_require__(120);
-var InnerSubscriber_1 = __webpack_require__(108);
+var iterator_1 = __webpack_require__(121);
+var InnerSubscriber_1 = __webpack_require__(109);
 var observable_1 = __webpack_require__(57);
 function subscribeToResult(outerSubscriber, result, outerValue, outerIndex) {
     var destination = new InnerSubscriber_1.InnerSubscriber(outerSubscriber, outerValue, outerIndex);
@@ -52303,7 +52325,7 @@ exports.subscribeToResult = subscribeToResult;
 //# sourceMappingURL=subscribeToResult.js.map
 
 /***/ }),
-/* 127 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52329,7 +52351,7 @@ exports.toSubscriber = toSubscriber;
 //# sourceMappingURL=toSubscriber.js.map
 
 /***/ }),
-/* 128 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52354,7 +52376,7 @@ exports.tryCatch = tryCatch;
 //# sourceMappingURL=tryCatch.js.map
 
 /***/ }),
-/* 129 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52371,13 +52393,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(1);
 var hint_service_1 = __webpack_require__(24);
+var options_1 = __webpack_require__(62);
 var AppComponent = (function () {
     function AppComponent(hintService) {
         this.hintService = hintService;
     }
     AppComponent.prototype.ngOnInit = function () { };
     AppComponent.prototype.startTour = function () {
-        this.hintService.initialize();
+        var hOpt = new options_1.HintOptions();
+        hOpt.elementsDisabled = false;
+        this.hintService.initialize(hOpt);
     };
     return AppComponent;
 }());
@@ -52385,11 +52410,11 @@ AppComponent = __decorate([
     core_1.Component({
         selector: 'angular-custom-tour-app',
         encapsulation: core_1.ViewEncapsulation.None,
-        template: __webpack_require__(106),
+        template: __webpack_require__(107),
         providers: [hint_service_1.HintService],
         styles: [
-            __webpack_require__(107),
-            __webpack_require__(105)
+            __webpack_require__(108),
+            __webpack_require__(106)
         ]
     }),
     __metadata("design:paramtypes", [hint_service_1.HintService])
@@ -52398,7 +52423,7 @@ exports.AppComponent = AppComponent;
 
 
 /***/ }),
-/* 130 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52412,8 +52437,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(1);
 var platform_browser_1 = __webpack_require__(44);
-var share_1 = __webpack_require__(133);
-var component_1 = __webpack_require__(129);
+var share_1 = __webpack_require__(134);
+var component_1 = __webpack_require__(130);
 var AppModule = (function () {
     function AppModule() {
     }
@@ -52437,15 +52462,15 @@ exports.AppModule = AppModule;
 
 
 /***/ }),
-/* 131 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(1);
-var platform_browser_dynamic_1 = __webpack_require__(62);
-var app_1 = __webpack_require__(65);
+var platform_browser_dynamic_1 = __webpack_require__(63);
+var app_1 = __webpack_require__(66);
 function main() {
     if ('prod' === process.env.ENV) {
         // Production
@@ -52459,11 +52484,11 @@ function main() {
 }
 document.addEventListener('DOMContentLoaded', function () { return main(); });
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(64)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(65)))
 
 /***/ }),
-/* 132 */,
-/* 133 */
+/* 133 */,
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52472,11 +52497,11 @@ function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
 Object.defineProperty(exports, "__esModule", { value: true });
-__export(__webpack_require__(134));
+__export(__webpack_require__(135));
 
 
 /***/ }),
-/* 134 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52490,7 +52515,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(1);
 var common_1 = __webpack_require__(15);
-var src_1 = __webpack_require__(136);
+var src_1 = __webpack_require__(137);
 var ShareModule = ShareModule_1 = (function () {
     function ShareModule() {
     }
@@ -52518,7 +52543,7 @@ var ShareModule_1;
 
 
 /***/ }),
-/* 135 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52554,7 +52579,7 @@ exports.HintComponent = HintComponent;
 
 
 /***/ }),
-/* 136 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52570,8 +52595,8 @@ var hint_service_1 = __webpack_require__(24);
 exports.HintService = hint_service_1.HintService;
 var common_1 = __webpack_require__(15);
 var core_1 = __webpack_require__(1);
-var hint_component_1 = __webpack_require__(135);
-var tour_component_1 = __webpack_require__(137);
+var hint_component_1 = __webpack_require__(136);
+var tour_component_1 = __webpack_require__(138);
 var HintModule = HintModule_1 = (function () {
     function HintModule() {
     }
@@ -52598,7 +52623,7 @@ var HintModule_1;
 
 
 /***/ }),
-/* 137 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52714,27 +52739,6 @@ TourComponent = __decorate([
 exports.TourComponent = TourComponent;
 
 
-/***/ }),
-/* 138 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var variables_1 = __webpack_require__(41);
-var HintOptions = (function () {
-    function HintOptions() {
-        this.elementsDisabled = true;
-        this.defaultPosition = variables_1.HintConfig.DEFAULT_POSITION;
-        this.defaultOrder = variables_1.HintConfig.DEFAULT_ORDER;
-        this.defaultLayer = variables_1.HintConfig.DEFAULT_PX_LAYER;
-        this.applyRelative = variables_1.HintConfig.APPLY_RELATIVE;
-    }
-    return HintOptions;
-}());
-exports.HintOptions = HintOptions;
-
-
 /***/ })
-],[131]);
-//# sourceMappingURL=main.1f686b645b4a194a6a4d.js.map
+],[132]);
+//# sourceMappingURL=main.147dab660338d60775e3.js.map

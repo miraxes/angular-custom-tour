@@ -19,20 +19,16 @@ In your module (app.module.ts)
   import { HintModule } from 'angular-custom-tour'
 
   @NgModule({
-    declarations: [
-      ...
-      ],
+    ...
     imports: [
-    ...
-    HintModule // Put here
-    ...
-    ],
-    entryComponents: [
+      ...
+      HintModule // Put here
       ...
     ]
+    ...
   ]
   ```
-In your page component
+Initialize it in your page component
   ```typescript
   import { HintService } from 'angular-custom-tour'
 
@@ -63,3 +59,30 @@ In your page component
     -->
   </tour-step>
   ```
+Also you need to inject styles from `styles/main.css`
+
+
+# Custom options Usage
+
+```typescript
+
+  startTour() {
+    let hOpt = new HintOptions();
+
+    hOpt.elementsDisabled = false; //change whatever you want
+
+    this.hintService.initialize(hOpt);
+  }
+
+}
+```
+
+Colons can be used to align columns.
+
+| option                     | default   | Usage  |
+| -------------------------- |:---------:| -----:|
+| elementsDisabled: boolean  | true      | Disabling highlightedElement (click) wont work|
+| defaultPosition: string    | 'bottom'  | Position of tour step to highlightedElement |
+| defaultOrder: number       | 99        | Order of showing steps |
+| defaultLayer: number       | 15        | Distance between highlightedElement and step in px |
+| applyRelative: boolean     | true      | Applying position:relative to highlightedElement (disable in case you want to highligh absolute positioned elements) |

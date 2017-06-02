@@ -32,6 +32,12 @@ Initialize it in your page component
   ```typescript
   import { HintService } from 'angular-custom-tour'
 
+  @Component({
+    ...
+    providers: [... HintService ... ],
+    ...
+  })
+
   class AppComponent {
 
     constructor(public hintService: HintService){ }
@@ -42,6 +48,7 @@ Initialize it in your page component
 
   }
   ```
+  > In case you want to init slider after pageload, you should use ngAfterViewInit
 
   ```html
   <!-- Bluring element insert on top of the page-->

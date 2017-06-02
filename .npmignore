@@ -4,6 +4,7 @@
 
 node_modules/
 npm-debug.log
+demo.gif
 
 dist/
 docs/

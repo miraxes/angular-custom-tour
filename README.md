@@ -3,6 +3,10 @@
 [![Versions](https://img.shields.io/npm/v/angular-custom-tour.svg?style=flat-square)]()
 [![License](https://img.shields.io/npm/l/angular-custom-tour.svg?style=flat-square)]()
 
+# How it works?
+
+![demo GIF](/demo.gif)
+
 # Demo
 [https://miraxes.github.io/angular-custom-tour](https://miraxes.github.io/angular-custom-tour)
 
@@ -70,6 +74,10 @@ Initialize it in your page component
     -->
   </tour-step>
   ```
+  ## NOTE:
+
+  > selector MUST BE unique, so you can highlight Element once
+
 Also you need to inject styles from `styles/main.css`
 
 

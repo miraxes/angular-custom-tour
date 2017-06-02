@@ -51144,13 +51144,13 @@ module.exports = "body {\n  padding: 25px;\n  background-color: #fff;\n  positio
 /* 107 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"content\">\n  <hint></hint>\n  <h1>angular-custom-tour DEMO</h1>\n  <a  class=\"btn btn-default\" (click)=\"startTour()\" id=\"demo3\">Start tour</a>\n    If you want to put ANYTHING inside your tour steps, this plugin created just for <span id=\"demo4\" style=\"background-color:#fff\">YOU!</span>\n\n    <h3> Here is default bootstrap table</h3>\n    <table class=\"table table-striped\">\n      <thead>\n        <th> Blue</th>\n        <th>Yellow</th>\n        <th class=\"success\">Red</th>\n      </thead>\n      <tbody>\n        <tr>\n          <td class=\"info\">blue one</td>\n          <td class=\"warning\">yellow one</td>\n          <td class=\"danger\" >red one</td>\n        </tr>\n        <tr>\n          <td class=\"info\">blue one</td>\n          <td class=\"warning\" id=\"demo2\">yellow one</td>\n          <td class=\"danger\"  >red one</td>\n        </tr>\n        <tr>\n          <td class=\"info\">blue one</td>\n          <td class=\"warning\">yellow one</td>\n          <td class=\"danger\" >red one</td>\n        </tr>\n        <tr>\n          <td class=\"info\">blue one</td>\n          <td class=\"warning\" id=\"demo5\">yellow one</td>\n          <td class=\"danger\" id=\"demo1\" >red one</td>\n        </tr>\n\n      </tbody>\n    </table>\n  <tour-step selector=\"demo3\" order=\"3\" position=\"right\">\n    <button type=\"button\" class=\"btn btn-default\">Default</button>\n    <button type=\"button\" class=\"btn btn-primary\">Primary</button>\n    <button type=\"button\" class=\"btn btn-success\">Success</button>\n    <button type=\"button\" class=\"btn btn-info\">Info</button>\n    <button type=\"button\" class=\"btn btn-warning\">Warning</button>\n    <button type=\"button\" class=\"btn btn-danger\">Danger</button>\n    <button type=\"button\" class=\"btn btn-link\">Link</button>\n  </tour-step>\n  <tour-step selector=\"demo2\" order=\"2\" position=\"top\">\n    <h2>TOP</h2>\n    I'm on top of the <a href=\"https://google.com.ua\" target=\"_blank\">google</a>\n  </tour-step>\n\n  <tour-step title=\"Your photo here\" selector=\"demo4\" order=\"4\" >\n    <img src=\"https://www.google.com.ua/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png\" alt=\"what\">\n  </tour-step>\n\n  <tour-step title=\"Thanks\" selector=\"demo5\" order=\"8\" >\n    <a class=\"btn btn-link\" href=\"https://github.com/miraxes/angular-custom-tour\">Back to github</a>\n  </tour-step>\n\n  <tour-step selector=\"demo1\" order=\"1\" >\n    <form class=\"form-inline\">\n      <div class=\"form-group\">\n        <label class=\"sr-only\" for=\"exampleInputAmount\">Amount (in dollars)</label>\n        <div class=\"input-group\">\n          <div class=\"input-group-addon\">$</div>\n          <input type=\"text\" class=\"form-control\" id=\"exampleInputAmount\" placeholder=\"Amount\">\n          <div class=\"input-group-addon\">.00</div>\n        </div>\n      </div>\n      <button type=\"submit\" class=\"btn btn-primary\">Transfer cash</button>\n    </form>\n  </tour-step>\n\n</div>\n"
+module.exports = "<div class=\"content\">\n  <hint></hint>\n  <h1>angular-custom-tour DEMO</h1>\n  <a  class=\"btn btn-default\" (click)=\"startTour()\" id=\"demo3\">Start tour</a>\n    If you want to put ANYTHING inside your tour steps, this plugin created just for <span id=\"demo4\" style=\"background-color:#fff\">YOU!</span>\n\n    <h3> Here is default bootstrap table</h3>\n    <table class=\"table table-striped\">\n      <thead>\n        <th> Blue</th>\n        <th>Yellow</th>\n        <th class=\"success\">Red</th>\n      </thead>\n      <tbody>\n        <tr>\n          <td class=\"info\">blue one</td>\n          <td class=\"warning\">yellow one</td>\n          <td class=\"danger\" >red one</td>\n        </tr>\n        <tr>\n          <td class=\"info\">blue one</td>\n          <td class=\"warning\" id=\"demo2\">yellow one</td>\n          <td class=\"danger\"  >red one</td>\n        </tr>\n        <tr>\n          <td class=\"info\">blue one</td>\n          <td class=\"warning\">yellow one</td>\n          <td class=\"danger\" >red one</td>\n        </tr>\n        <tr>\n          <td class=\"info\">blue one</td>\n          <td class=\"warning\" id=\"demo5\">yellow one</td>\n          <td class=\"danger\" id=\"demo1\" >red one</td>\n        </tr>\n\n      </tbody>\n    </table>\n  <tour-step selector=\"demo3\" order=\"3\" position=\"right\">\n    <button type=\"button\" class=\"btn btn-default\">Default</button>\n    <button type=\"button\" class=\"btn btn-primary\">Primary</button>\n    <button type=\"button\" class=\"btn btn-success\">Success</button>\n    <button type=\"button\" class=\"btn btn-info\">Info</button>\n    <button type=\"button\" class=\"btn btn-warning\">Warning</button>\n    <button type=\"button\" class=\"btn btn-danger\">Danger</button>\n    <button type=\"button\" class=\"btn btn-link\">Link</button>\n  </tour-step>\n  <tour-step selector=\"demo2\" order=\"2\" position=\"top\">\n    <h2>TOP</h2>\n    I'm on top of the <a href=\"https://google.com.ua\" target=\"_blank\">google</a>\n  </tour-step>\n\n  <tour-step title=\"Your photo here\" selector=\"demo4\" order=\"4\" >\n    <img src=\"https://www.google.com.ua/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png\" alt=\"what\">\n  </tour-step>\n\n  <tour-step title=\"Thanks\" selector=\"demo5\" order=\"8\" >\n    <a class=\"btn btn-link\" href=\"https://github.com/miraxes/angular-custom-tour\">Back to github</a>\n  </tour-step>\n\n  <tour-step selector=\"demo21\" order=\"1\" >\n    <form class=\"form-inline\">\n      <div class=\"form-group\">\n        <label class=\"sr-only\" for=\"exampleInputAmount\">Amount (in dollars)</label>\n        <div class=\"input-group\">\n          <div class=\"input-group-addon\">$</div>\n          <input type=\"text\" class=\"form-control\" id=\"exampleInputAmount\" placeholder=\"Amount\">\n          <div class=\"input-group-addon\">.00</div>\n        </div>\n      </div>\n      <button type=\"submit\" class=\"btn btn-primary\">Transfer cash</button>\n    </form>\n  </tour-step>\n\n</div>\n"
 
 /***/ }),
 /* 108 */
 /***/ (function(module, exports) {
 
-module.exports = ".intro-tour-hint-wrapper {\n  position: absolute !important;\n  background-color: #fff;\n  z-index: 999;\n  text-align: center;\n  font-size: 14px;\n  color: #000;\n  border-radius: 5px;\n  -webkit-box-shadow: inset 0px 0px 30px 0px rgba(0,0,0,0.5);\n  box-shadow: inset 0px 0px 30px 0px rgba(0,0,0,0.5);\n}\n\n.intro-tour-hint-wrapper .header {\n  padding: 10px;\n  border-bottom: 1px solid #ccc;\n  background-color: #ddd;\n  border-radius: 5px;\n  -webkit-box-shadow: inset 0px 0px 30px 0px rgba(0,0,0,0.5);\n  box-shadow: inset 0px 0px 30px 0px rgba(0,0,0,0.5);\n}\n\n.intro-tour-hint-wrapper .content {\n  padding: 10px;\n}\n\n.intro-tour-hint-wrapper .footer {\n  padding: 10px;\n}\n\n.intro-tour-hint-wrapper .navigate-btn {\n  background-color: #ddd;\n  box-shadow: 0 0 15px rgba(0, 0, 0, .7);\n  color: #5343db;\n  border-radius: 50%;\n  height: 30px;\n  width: 30px;\n  margin-left: 7px;\n  font-size: 18px;\n  line-height: 30px;\n  text-align: center;\n  display: inline-block;\n  cursor: pointer;\n  text-decoration: none;\n}\n\n.intro-tour-hint-wrapper .navigate-btn:first {\n  margin-left: 0;\n}\n\n.intro-tour-hint-wrapper.transformX_50.transformY_100 {\n  -webkit-transform: translateX(-50%) translateY(-100%);\n  transform: translateX(-50%) translateY(-100%);\n}\n\n.intro-tour-hint-wrapper.transformX_50 {\n  -webkit-transform: translateX(-50%);\n  transform: translateX(-50%);\n}\n\n.intro-tour-hint-wrapper.transformY_50 {\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n}\n\n.intro-tour-hint-wrapper.transformY_50.transformX_100 {\n  -webkit-transform: translateX(-100%) translateY(-50%);\n  transform: translateX(-100%) translateY(-50%);\n}\n\n.hint-disabled {\n  pointer-events: none;\n  cursor: default;\n}\n\n.hint-overlay {\n  position: fixed;\n  width: 100%;\n  height: 100%;\n  background: rgba(0, 0, 0, .5);\n  z-index: 20;\n  top: 0;\n  left: 0;\n}\n\n.hint-relative {\n  position: relative;\n}\n"
+module.exports = ".intro-tour-hint-wrapper {\n  position: absolute !important;\n  background-color: #fff;\n  z-index: 999;\n  text-align: center;\n  font-size: 14px;\n  color: #000;\n  border-radius: 5px;\n  -webkit-box-shadow: inset 0 0 30px 0 rgba(0, 0, 0, .5);\n  box-shadow: inset 0 0 30px 0 rgba(0, 0, 0, .5);\n}\n\n.intro-tour-hint-wrapper .header {\n  padding: 10px;\n  border-bottom: 1px solid #ccc;\n  background-color: #ddd;\n  border-radius: 5px;\n  -webkit-box-shadow: inset 0 0 30px 0 rgba(0, 0, 0, .5);\n  box-shadow: inset 0 0 30px 0 rgba(0, 0, 0, .5);\n}\n\n.intro-tour-hint-wrapper .content {\n  padding: 10px;\n}\n\n.intro-tour-hint-wrapper .footer {\n  padding: 10px;\n}\n\n.intro-tour-hint-wrapper .navigate-btn {\n  background-color: #ddd;\n  box-shadow: 0 0 15px rgba(0, 0, 0, .7);\n  color: #5343db;\n  border-radius: 50%;\n  height: 30px;\n  width: 30px;\n  margin-left: 7px;\n  font-size: 18px;\n  line-height: 30px;\n  text-align: center;\n  display: inline-block;\n  cursor: pointer;\n  text-decoration: none;\n}\n\n.intro-tour-hint-wrapper .navigate-btn:first {\n  margin-left: 0;\n}\n\n.intro-tour-hint-wrapper.transformX_50.transformY_100 {\n  -webkit-transform: translateX(-50%) translateY(-100%);\n  transform: translateX(-50%) translateY(-100%);\n}\n\n.intro-tour-hint-wrapper.transformX_50 {\n  -webkit-transform: translateX(-50%);\n  transform: translateX(-50%);\n}\n\n.intro-tour-hint-wrapper.transformY_50 {\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n}\n\n.intro-tour-hint-wrapper.transformY_50.transformX_100 {\n  -webkit-transform: translateX(-100%) translateY(-50%);\n  transform: translateX(-100%) translateY(-50%);\n}\n\n.hint-disabled {\n  pointer-events: none;\n  cursor: default;\n}\n\n.hint-overlay {\n  position: fixed;\n  width: 100%;\n  height: 100%;\n  background: rgba(0, 0, 0, .5);\n  z-index: 20;\n  top: 0;\n  left: 0;\n}\n\n.hint-relative {\n  position: relative;\n}\n"
 
 /***/ }),
 /* 109 */
@@ -52651,47 +52651,55 @@ var TourComponent = (function () {
         this.position = this.position || this.hintService.hintOptions.defaultPosition;
         this.order = +this.order || this.hintService.hintOptions.defaultOrder;
         var highlightedElement = document.getElementById(this.selector);
-        highlightedElement.style.zIndex = variables_1.HintConfig.Z_INDEX;
-        if (this.hintService.hintOptions.elementsDisabled) {
-            this.disableClick(highlightedElement);
+        if (highlightedElement) {
+            highlightedElement.style.zIndex = variables_1.HintConfig.Z_INDEX;
+            if (this.hintService.hintOptions.elementsDisabled) {
+                this.disableClick(highlightedElement);
+            }
+            if (this.hintService.hintOptions.applyRelative) {
+                highlightedElement.classList.add('hint-relative');
+            }
+            switch (this.position) {
+                case 'top':
+                    this.transformClass = 'transformX_50 transformY_100';
+                    this.topPos = highlightedElement.offsetTop - this.hintService.hintOptions.defaultLayer;
+                    this.leftPos = highlightedElement.offsetLeft + highlightedElement.offsetWidth / 2;
+                    break;
+                case 'bottom':
+                    this.transformClass = 'transformX_50';
+                    this.topPos = highlightedElement.offsetTop + highlightedElement.offsetHeight + this.hintService.hintOptions.defaultLayer;
+                    this.leftPos = highlightedElement.offsetLeft + highlightedElement.offsetWidth / 2;
+                    break;
+                case 'left':
+                    this.topPos = highlightedElement.offsetTop + highlightedElement.offsetHeight / 2;
+                    this.leftPos = highlightedElement.offsetLeft - this.hintService.hintOptions.defaultLayer;
+                    this.transformClass = 'transformY_50 transformX_100';
+                    break;
+                case 'right':
+                    this.topPos = highlightedElement.offsetTop + highlightedElement.offsetHeight / 2;
+                    this.leftPos = highlightedElement.offsetLeft + highlightedElement.offsetWidth + this.hintService.hintOptions.defaultLayer;
+                    this.transformClass = 'transformY_50';
+                    break;
+                default:
+                    throw 'Invalid hint position ->' + this.position;
+            }
         }
-        if (this.hintService.hintOptions.applyRelative) {
-            highlightedElement.classList.add('hint-relative');
+        else {
+            this.topPos = 0;
+            this.leftPos = 0;
         }
         this.showme = true;
         this.hasNext = this.hintService.hasNext();
         this.hasPrev = this.hintService.hasPrev();
-        switch (this.position) {
-            case 'top':
-                this.transformClass = 'transformX_50 transformY_100';
-                this.topPos = highlightedElement.offsetTop - this.hintService.hintOptions.defaultLayer;
-                this.leftPos = highlightedElement.offsetLeft + highlightedElement.offsetWidth / 2;
-                break;
-            case 'bottom':
-                this.transformClass = 'transformX_50';
-                this.topPos = highlightedElement.offsetTop + highlightedElement.offsetHeight + this.hintService.hintOptions.defaultLayer;
-                this.leftPos = highlightedElement.offsetLeft + highlightedElement.offsetWidth / 2;
-                break;
-            case 'left':
-                this.topPos = highlightedElement.offsetTop + highlightedElement.offsetHeight / 2;
-                this.leftPos = highlightedElement.offsetLeft - this.hintService.hintOptions.defaultLayer;
-                this.transformClass = 'transformY_50 transformX_100';
-                break;
-            case 'right':
-                this.topPos = highlightedElement.offsetTop + highlightedElement.offsetHeight / 2;
-                this.leftPos = highlightedElement.offsetLeft + highlightedElement.offsetWidth + this.hintService.hintOptions.defaultLayer;
-                this.transformClass = 'transformY_50';
-                break;
-            default:
-                throw 'Invalid hint position ->' + this.position;
-        }
     };
     TourComponent.prototype.hideStep = function () {
         var highlightedElement = document.getElementById(this.selector);
-        highlightedElement.style.zIndex = '0';
+        if (highlightedElement) {
+            highlightedElement.style.zIndex = '0';
+            this.enableClick(highlightedElement);
+            highlightedElement.classList.remove('hint-relative');
+        }
         this.showme = false;
-        this.enableClick(highlightedElement);
-        highlightedElement.classList.remove('hint-relative');
     };
     TourComponent.prototype.exit = function () {
         this.hintService.end();
@@ -52740,4 +52748,4 @@ exports.TourComponent = TourComponent;
 
 /***/ })
 ],[132]);
-//# sourceMappingURL=main.32f8b19c599eb9375159.js.map
+//# sourceMappingURL=main.ff7b73ee09bc2ba8e9f8.js.map

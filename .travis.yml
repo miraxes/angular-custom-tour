@@ -8,5 +8,3 @@ install:
 cache:
   directories:
     - $TRAVIS_BUILD_DIR/node_modules
-
-script: $TRAVIS_BUILD_DIR/scripts/.travis.sh

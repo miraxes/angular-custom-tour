@@ -1,4 +1,3 @@
-# Will be available later
 [![Build Status](https://img.shields.io/travis/miraxes/angular-custom-tour.svg?style=flat-square)](https://travis-ci.org/miraxes/angular-custom-tour)
 [![Downloads](https://img.shields.io/npm/dt/angular-custom-tour.svg?style=flat-square)](https://www.npmjs.com/package/angular-custom-tour)
 [![Versions](https://img.shields.io/npm/v/angular-custom-tour.svg?style=flat-square)]()

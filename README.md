@@ -4,11 +4,13 @@
 [![Versions](https://img.shields.io/npm/v/angular-custom-tour.svg?style=flat-square)]()
 [![License](https://img.shields.io/npm/l/angular-custom-tour.svg?style=flat-square)]()
 
-# demo
+# Demo
 [https://miraxes.github.io/angular-custom-tour](https://miraxes.github.io/angular-custom-tour)
 
 
 # Custom tour with Angular 2.x.x
+
+Follow instructions and everything should be fine. :)
 
 # Usage
 
@@ -48,6 +50,9 @@ Initialize it in your page component
 
   }
   ```
+
+  ## NOTE:
+
   > In case you want to init slider after pageload, you should use ngAfterViewInit
 
   ```html
@@ -93,3 +98,6 @@ Colons can be used to align columns.
 | defaultOrder: number       | 99        | Order of showing steps |
 | defaultLayer: number       | 15        | Distance between highlightedElement and step in px |
 | applyRelative: boolean     | true      | Applying position:relative to highlightedElement (disable in case you want to highligh absolute positioned elements) |
+
+
+This module in active development mode, if you have any suggestions fell free to contact me.

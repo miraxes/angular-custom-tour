@@ -31,7 +31,6 @@ export class TourComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
     this.hintService.register(this.selector, this);
   }
 
@@ -39,49 +38,63 @@ export class TourComponent implements OnInit {
     this.position = this.position || this.hintService.hintOptions.defaultPosition;
     this.order = +this.order || this.hintService.hintOptions.defaultOrder;
     let highlightedElement = document.getElementById(this.selector);
-    highlightedElement.style.zIndex = HintConfig.Z_INDEX;
 
-    if (this.hintService.hintOptions.elementsDisabled) {
-      this.disableClick(highlightedElement);
+    if(highlightedElement){
+      highlightedElement.style.zIndex = HintConfig.Z_INDEX;
+
+      if (this.hintService.hintOptions.elementsDisabled) {
+        this.disableClick(highlightedElement);
+      }
+
+      if (this.hintService.hintOptions.applyRelative) {
+        highlightedElement.classList.add('hint-relative');
+      }
+
+      switch (this.position) {
+        case 'top':
+          this.transformClass = 'transformX_50 transformY_100';
+          this.topPos = highlightedElement.offsetTop - this.hintService.hintOptions.defaultLayer;
+          this.leftPos = highlightedElement.offsetLeft + highlightedElement.offsetWidth / 2;
+          break;
+        case 'bottom':
+          this.transformClass = 'transformX_50';
+          this.topPos = highlightedElement.offsetTop + highlightedElement.offsetHeight + this.hintService.hintOptions.defaultLayer;
+          this.leftPos = highlightedElement.offsetLeft + highlightedElement.offsetWidth / 2;
+          break;
+        case 'left':
+          this.topPos = highlightedElement.offsetTop + highlightedElement.offsetHeight / 2;
+          this.leftPos = highlightedElement.offsetLeft - this.hintService.hintOptions.defaultLayer;
+          this.transformClass = 'transformY_50 transformX_100';
+          break;
+        case 'right':
+          this.topPos = highlightedElement.offsetTop + highlightedElement.offsetHeight / 2;
+          this.leftPos = highlightedElement.offsetLeft + highlightedElement.offsetWidth + this.hintService.hintOptions.defaultLayer;
+          this.transformClass = 'transformY_50';
+          break;
+        default:
+          throw 'Invalid hint position ->' + this.position;
+      }
+    } else {
+      this.topPos = 0;
+      this.leftPos = 0;
     }
-    if (this.hintService.hintOptions.applyRelative) {
-      highlightedElement.classList.add('hint-relative');
-    }
+
     this.showme = true;
     this.hasNext = this.hintService.hasNext();
     this.hasPrev = this.hintService.hasPrev();
-    switch (this.position) {
-      case 'top':
-        this.transformClass = 'transformX_50 transformY_100';
-        this.topPos = highlightedElement.offsetTop - this.hintService.hintOptions.defaultLayer;
-        this.leftPos = highlightedElement.offsetLeft + highlightedElement.offsetWidth / 2;
-        break;
-      case 'bottom':
-        this.transformClass = 'transformX_50';
-        this.topPos = highlightedElement.offsetTop + highlightedElement.offsetHeight + this.hintService.hintOptions.defaultLayer;
-        this.leftPos = highlightedElement.offsetLeft + highlightedElement.offsetWidth / 2;
-        break;
-      case 'left':
-        this.topPos = highlightedElement.offsetTop + highlightedElement.offsetHeight / 2;
-        this.leftPos = highlightedElement.offsetLeft - this.hintService.hintOptions.defaultLayer;
-        this.transformClass = 'transformY_50 transformX_100';
-        break;
-      case 'right':
-        this.topPos = highlightedElement.offsetTop + highlightedElement.offsetHeight / 2;
-        this.leftPos = highlightedElement.offsetLeft + highlightedElement.offsetWidth + this.hintService.hintOptions.defaultLayer;
-        this.transformClass = 'transformY_50';
-        break;
-      default:
-        throw 'Invalid hint position ->' + this.position;
-    }
+
   }
 
   hideStep(): void {
     let highlightedElement = document.getElementById(this.selector);
-    highlightedElement.style.zIndex = '0';
+
+    if(highlightedElement) {
+      highlightedElement.style.zIndex = '0';
+      this.enableClick(highlightedElement);
+      highlightedElement.classList.remove('hint-relative');
+    }
+
     this.showme = false;
-    this.enableClick(highlightedElement);
-    highlightedElement.classList.remove('hint-relative');
   }
 
   exit(): void {

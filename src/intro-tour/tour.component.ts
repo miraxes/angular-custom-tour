@@ -4,7 +4,7 @@ import { HintConfig } from '../variables';
 
 @Component({
   selector: HintConfig.HINT_TAG,
-  template: `<div class="intro-tour-hint-wrapper {{transformClass}}" *ngIf="showme" [ngStyle]="{'top': topPos+'px', 'left': leftPos+'px'}" >
+  template: `<div class="intro-tour-hint-wrapper {{transformClass}} step{{order}} {{position}}" *ngIf="showme" [ngStyle]="{'top': topPos+'px', 'left': leftPos+'px'}" >
     <div class="header" *ngIf="title">{{title}}</div>
     <div class="content"><ng-content></ng-content></div>
     <div class="footer">

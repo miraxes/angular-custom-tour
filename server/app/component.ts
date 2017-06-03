@@ -23,8 +23,6 @@ export class AppComponent implements OnInit {
   ngOnInit() { }
 
   startTour() {
-    let hOpt = new HintOptions();
-    hOpt.elementsDisabled = false;
-    this.hintService.initialize(hOpt);
+    this.hintService.initialize({defaultPosition: 'bottom'});
   }
 }

@@ -6,5 +6,6 @@ export class HintOptions {
     defaultOrder: number = HintConfig.DEFAULT_ORDER;
     defaultLayer: number = HintConfig.DEFAULT_PX_LAYER;
     applyRelative: boolean = HintConfig.APPLY_RELATIVE;
+    stepTag: string = HintConfig.HINT_TAG;
 
 }

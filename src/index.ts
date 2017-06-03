@@ -20,4 +20,4 @@ export class HintModule {
     }
 };
 
-export { HintService };
+export { HintService, TourComponent };

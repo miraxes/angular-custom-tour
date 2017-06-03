@@ -60,7 +60,7 @@ Initialize it in your page component
 
   ```html
   <!-- Bluring element insert on top of the page-->
-  <hint></hint>
+  <tour-overlay></tour-overlay>
 
   <!-- start TOUR -->
   <button name="button" (click)="startTour()"> START!</button>

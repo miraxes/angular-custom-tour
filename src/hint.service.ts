@@ -30,7 +30,6 @@ export class HintService {
     this.steps = this.initSteps(nodes);
     this.startAt(0);
     this.overlay$.next(true);
-    this.show(this.currentStep);
   }
   /**
    * Show step
@@ -118,6 +117,7 @@ export class HintService {
    */
   public startAt(stepId: number): void {
     this.currentStep = this.steps[stepId];
+    this.show(this.currentStep);
   }
   /**
    * Convert Element[] to Step[]

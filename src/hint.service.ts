@@ -56,6 +56,18 @@ export class HintService {
     anchor.showStep();
   }
   /**
+   * On overlay click behaviour
+   * @method overlayNext
+   */
+  public overlayNext(): void {
+    if (this.hasNext()) {
+      this.anchors[this.currentStep.selector].hideStep();
+      this.showNext();
+    } else {
+      this.end();
+    }
+  }
+  /**
    * Show step previous to {Step} this.currentStep
    * @method showPrev
    */

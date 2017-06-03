@@ -3,13 +3,17 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'tour-overlay',
-  template: `<div class="hint-overlay" *ngIf="show"></div>`,
+  template: `<div class="hint-overlay" *ngIf="show" (click)="dismiss()"></div>`,
 })
 export class HintComponent {
   show: boolean;
 
   constructor(public hintService: HintService) {
     this.hintService.overlay$.subscribe(data => this.show = data);
+  }
+
+  dismiss(): void {
+    this.hintService.overlayNext();
   }
 
 }

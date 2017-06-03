@@ -19299,6 +19299,19 @@ var HintService = (function () {
         anchor.showStep();
     };
     /**
+     * On overlay click behaviour
+     * @method overlayNext
+     */
+    HintService.prototype.overlayNext = function () {
+        if (this.hasNext()) {
+            this.anchors[this.currentStep.selector].hideStep();
+            this.showNext();
+        }
+        else {
+            this.end();
+        }
+    };
+    /**
      * Show step previous to {Step} this.currentStep
      * @method showPrev
      */
@@ -24064,6 +24077,7 @@ exports.HintConfig = {
     DEFAULT_ORDER: 99,
     DEFAULT_PX_LAYER: 15,
     APPLY_RELATIVE: true,
+    DISMISS_ON_OVERLAY: false,
 };
 
 
@@ -52540,12 +52554,15 @@ var HintComponent = (function () {
         this.hintService = hintService;
         this.hintService.overlay$.subscribe(function (data) { return _this.show = data; });
     }
+    HintComponent.prototype.dismiss = function () {
+        this.hintService.overlayNext();
+    };
     return HintComponent;
 }());
 HintComponent = __decorate([
     core_1.Component({
         selector: 'tour-overlay',
-        template: "<div class=\"hint-overlay\" *ngIf=\"show\"></div>",
+        template: "<div class=\"hint-overlay\" *ngIf=\"show\" (click)=\"dismiss()\"></div>",
     }),
     __metadata("design:paramtypes", [hint_service_1.HintService])
 ], HintComponent);
@@ -52738,6 +52755,7 @@ var HintOptions = (function () {
         this.defaultLayer = variables_1.HintConfig.DEFAULT_PX_LAYER;
         this.applyRelative = variables_1.HintConfig.APPLY_RELATIVE;
         this.stepTag = variables_1.HintConfig.HINT_TAG;
+        this.dismissOnOverlay = variables_1.HintConfig.DISMISS_ON_OVERLAY;
     }
     return HintOptions;
 }());
@@ -52746,4 +52764,4 @@ exports.HintOptions = HintOptions;
 
 /***/ })
 ],[131]);
-//# sourceMappingURL=main.35b396aea43fbbc8e2f3.js.map
+//# sourceMappingURL=main.95423659f9c9bb81f01c.js.map

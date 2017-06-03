@@ -86,21 +86,18 @@ Also you need to inject styles from `styles/main.css`
 ```typescript
 
   startTour() {
-    let hOpt = new HintOptions();
-
-    hOpt.elementsDisabled = false; //change whatever you want
-
-    this.hintService.initialize(hOpt);
+    this.hintService.initialize({elementsDisabled: false}); // HintOptions
   }
 
 }
 ```
 
-Colons can be used to align columns.
+## HintOptions
 
 | option                     | default   | Usage  |
 | -------------------------- |:---------:| ------ |
 | elementsDisabled: boolean  | true      | Disabling highlightedElement (click) wont work|
+| dismissOnOverlay: boolean  | false     | Go to next step when clicking on overlay (close tour if this is last step)|
 | defaultPosition: string    | 'bottom'  | Position of tour step to highlightedElement |
 | defaultOrder: number       | 99        | Order of showing steps |
 | defaultLayer: number       | 15        | Distance between highlightedElement and step in px |

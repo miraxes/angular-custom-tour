@@ -6,4 +6,5 @@ export const HintConfig = {
   DEFAULT_ORDER: 99,
   DEFAULT_PX_LAYER: 15,
   APPLY_RELATIVE: true,
+  DISMISS_ON_OVERLAY: false,
 };

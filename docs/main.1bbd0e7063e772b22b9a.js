@@ -19274,7 +19274,6 @@ var HintService = (function () {
         this.steps = this.initSteps(nodes);
         this.startAt(0);
         this.overlay$.next(true);
-        this.show(this.currentStep);
     };
     /**
      * Show step
@@ -19361,6 +19360,7 @@ var HintService = (function () {
      */
     HintService.prototype.startAt = function (stepId) {
         this.currentStep = this.steps[stepId];
+        this.show(this.currentStep);
     };
     /**
      * Convert Element[] to Step[]
@@ -24083,6 +24083,7 @@ var HintOptions = (function () {
         this.defaultOrder = variables_1.HintConfig.DEFAULT_ORDER;
         this.defaultLayer = variables_1.HintConfig.DEFAULT_PX_LAYER;
         this.applyRelative = variables_1.HintConfig.APPLY_RELATIVE;
+        this.stepTag = variables_1.HintConfig.HINT_TAG;
     }
     return HintOptions;
 }());
@@ -52569,7 +52570,7 @@ var HintComponent = (function () {
 }());
 HintComponent = __decorate([
     core_1.Component({
-        selector: 'hint',
+        selector: 'tour-overlay',
         template: "<div class=\"hint-overlay\" *ngIf=\"show\"></div>",
     }),
     __metadata("design:paramtypes", [hint_service_1.HintService])
@@ -52596,6 +52597,7 @@ var common_1 = __webpack_require__(15);
 var core_1 = __webpack_require__(1);
 var hint_component_1 = __webpack_require__(136);
 var tour_component_1 = __webpack_require__(138);
+exports.TourComponent = tour_component_1.TourComponent;
 var HintModule = HintModule_1 = (function () {
     function HintModule() {
     }
@@ -52748,4 +52750,4 @@ exports.TourComponent = TourComponent;
 
 /***/ })
 ],[132]);
-//# sourceMappingURL=main.cede74f4706c8d8bee4d.js.map
+//# sourceMappingURL=main.1bbd0e7063e772b22b9a.js.map

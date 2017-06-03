@@ -13,7 +13,8 @@ export class HintComponent {
   }
 
   dismiss(): void {
-    this.hintService.overlayNext();
+    if(this.hintService.hintOptions.dismissOnOverlay)
+      this.hintService.overlayNext();
   }
 
 }

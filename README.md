@@ -84,12 +84,9 @@ Also you need to inject styles from `styles/main.css`
 # Custom options Usage
 
 ```typescript
-
   startTour() {
     this.hintService.initialize({elementsDisabled: false}); // HintOptions
   }
-
-}
 ```
 
 ## HintOptions
@@ -101,7 +98,7 @@ Also you need to inject styles from `styles/main.css`
 | defaultPosition: string    | 'bottom'  | Position of tour step to highlightedElement |
 | defaultOrder: number       | 99        | Order of showing steps |
 | defaultLayer: number       | 15        | Distance between highlightedElement and step in px |
-| applyRelative: boolean     | true      | Applying position:relative to highlightedElement (disable in case you want to highligh absolute positioned elements) |
+| applyRelative: boolean     | true      | Applying position:relative to highlightedElement (disable in case you want to highlight absolute positioned elements) |
 
 
-This module in active development mode, if you have any suggestions fell free to contact me.
+This module in active development mode, if you have any suggestions feel free to contact me.

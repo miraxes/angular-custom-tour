@@ -1,28 +1,36 @@
 import {
   Component,
   ViewEncapsulation,
-  OnInit
-} from '@angular/core'
+  OnInit,
+} from '@angular/core';
 import { HintService } from '../../src/hint.service';
 import { HintOptions } from '../../src/options';
 
 @Component({
+  // tslint:disable-next-line
   selector: 'angular-custom-tour-app',
   encapsulation: ViewEncapsulation.None,
   templateUrl: './template.html',
   providers: [HintService],
   styleUrls: [
     '../../styles/main.css',
-    './style.css'
-  ]
+    './style.css',
+  ],
 })
 export class AppComponent implements OnInit {
 
-  constructor(public hintService: HintService){
+  constructor(public hintService: HintService) {
   }
-  ngOnInit() { }
+  ngOnInit(): void {
+  this.hintService.showingStep$.subscribe(step => {
+    console.log('STEPPY, ', step);
+  });
+  this.hintService.finish$.subscribe(finish => {
+    console.log('Finished, ', finish);
+  });
+}
 
-  startTour() {
+  startTour(): void {
     this.hintService.initialize({defaultPosition: 'bottom'});
   }
 }

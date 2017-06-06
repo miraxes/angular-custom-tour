@@ -101,4 +101,12 @@ Also you need to inject styles from `styles/main.css`
 | applyRelative: boolean     | true      | Applying position:relative to highlightedElement (disable in case you want to highlight absolute positioned elements) |
 
 
+##  Hint service events
+
+| event         | Description  |
+| ------------- | ------------ |
+| finish$       | When tour is finished |
+| showingStep$  | On each step show (Params > CurrentStep) |
+
+
 This module in active development mode, if you have any suggestions feel free to contact me.

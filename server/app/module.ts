@@ -1,19 +1,19 @@
-import { NgModule } from '@angular/core'
-import { BrowserModule } from '@angular/platform-browser'
-import { ShareModule } from '../share'
-import { AppComponent } from './component'
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { ShareModule } from '../share';
+import { AppComponent } from './component';
 
 @NgModule({
   bootstrap: [
-    AppComponent
+    AppComponent,
   ],
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
-    ShareModule
-  ]
+    ShareModule,
+  ],
 })
 export class AppModule {
 

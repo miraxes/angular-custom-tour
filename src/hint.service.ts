@@ -17,6 +17,8 @@ export class HintService {
   anchors: { [selector: string]: TourComponent } = {};
   overlay$: Subject<boolean> = new Subject();
   registration$: Subject<boolean> = new Subject();
+  finish$: Subject<boolean> = new Subject();
+  showingStep$: Subject<Step> = new Subject();
 
   /**
    * Initialize hint service
@@ -121,6 +123,7 @@ export class HintService {
     }
     this.currentStep = undefined;
     anchor.hideStep();
+    this.finish$.next(true);
   }
   /**
    * Start hint tour at some position

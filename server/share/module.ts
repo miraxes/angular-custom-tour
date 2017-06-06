@@ -1,24 +1,24 @@
 import {
   NgModule,
-  ModuleWithProviders
-} from '@angular/core'
-import { CommonModule } from '@angular/common'
-import { HintModule } from '../../src'
+  ModuleWithProviders,
+} from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { HintModule } from '../../src';
 
 @NgModule({
   imports: [
     CommonModule,
-    HintModule
+    HintModule,
   ],
   exports: [
     CommonModule,
-    HintModule
-  ]
+    HintModule,
+  ],
 })
 export class ShareModule {
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: ShareModule
-    }
+      ngModule: ShareModule,
+    };
   }
 }

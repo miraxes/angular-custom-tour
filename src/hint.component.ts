@@ -2,6 +2,7 @@ import { HintService } from './hint.service';
 import { Component } from '@angular/core';
 
 @Component({
+  // tslint:disable-next-line
   selector: 'tour-overlay',
   template: `<div class="hint-overlay" *ngIf="show" (click)="dismiss()"></div>`,
 })

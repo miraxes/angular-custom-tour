@@ -8,5 +8,4 @@ export class HintOptions {
     applyRelative?: boolean = HintConfig.APPLY_RELATIVE;
     stepTag?: string = HintConfig.HINT_TAG;
     dismissOnOverlay?: boolean = HintConfig.DISMISS_ON_OVERLAY;
-
 }

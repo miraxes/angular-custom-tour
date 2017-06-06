@@ -4,7 +4,8 @@ import { HintConfig } from '../variables';
 
 @Component({
   selector: HintConfig.HINT_TAG,
-  template: `<div class="intro-tour-hint-wrapper {{transformClass}} step{{order}} {{position}}" *ngIf="showme" [ngStyle]="{'top': topPos+'px', 'left': leftPos+'px'}" >
+  template: `<div class="intro-tour-hint-wrapper {{transformClass}} step{{order}} {{position}}"
+  *ngIf="showme" [ngStyle]="{'top': topPos+'px', 'left': leftPos+'px'}" >
     <div class="header" *ngIf="title">{{title}}</div>
     <div class="content"><ng-content></ng-content></div>
     <div class="footer">
@@ -35,11 +36,12 @@ export class TourComponent implements OnInit {
   }
 
   showStep(): void {
+    this.hintService.showingStep$.next(this);
     this.position = this.position || this.hintService.hintOptions.defaultPosition;
     this.order = +this.order || this.hintService.hintOptions.defaultOrder;
     let highlightedElement = document.getElementById(this.selector);
 
-    if(highlightedElement){
+    if(highlightedElement) {
       highlightedElement.style.zIndex = HintConfig.Z_INDEX;
 
       if (this.hintService.hintOptions.elementsDisabled) {

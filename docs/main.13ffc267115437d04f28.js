@@ -19259,6 +19259,8 @@ var HintService = (function () {
         this.anchors = {};
         this.overlay$ = new Subject_1.Subject();
         this.registration$ = new Subject_1.Subject();
+        this.finish$ = new Subject_1.Subject();
+        this.showingStep$ = new Subject_1.Subject();
     }
     /**
      * Initialize hint service
@@ -19364,6 +19366,7 @@ var HintService = (function () {
         }
         this.currentStep = undefined;
         anchor.hideStep();
+        this.finish$.next(true);
     };
     /**
      * Start hint tour at some position
@@ -52388,7 +52391,14 @@ var AppComponent = (function () {
     function AppComponent(hintService) {
         this.hintService = hintService;
     }
-    AppComponent.prototype.ngOnInit = function () { };
+    AppComponent.prototype.ngOnInit = function () {
+        this.hintService.showingStep$.subscribe(function (step) {
+            console.log('STEPPY, ', step);
+        });
+        this.hintService.finish$.subscribe(function (finish) {
+            console.log('Finished, ', finish);
+        });
+    };
     AppComponent.prototype.startTour = function () {
         this.hintService.initialize({ defaultPosition: 'bottom' });
     };
@@ -52396,14 +52406,15 @@ var AppComponent = (function () {
 }());
 AppComponent = __decorate([
     core_1.Component({
+        // tslint:disable-next-line
         selector: 'angular-custom-tour-app',
         encapsulation: core_1.ViewEncapsulation.None,
         template: __webpack_require__(106),
         providers: [hint_service_1.HintService],
         styles: [
             __webpack_require__(107),
-            __webpack_require__(105)
-        ]
+            __webpack_require__(105),
+        ],
     }),
     __metadata("design:paramtypes", [hint_service_1.HintService])
 ], AppComponent);
@@ -52435,15 +52446,15 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         bootstrap: [
-            component_1.AppComponent
+            component_1.AppComponent,
         ],
         declarations: [
-            component_1.AppComponent
+            component_1.AppComponent,
         ],
         imports: [
             platform_browser_1.BrowserModule,
-            share_1.ShareModule
-        ]
+            share_1.ShareModule,
+        ],
     })
 ], AppModule);
 exports.AppModule = AppModule;
@@ -52509,7 +52520,7 @@ var ShareModule = ShareModule_1 = (function () {
     }
     ShareModule.forRoot = function () {
         return {
-            ngModule: ShareModule_1
+            ngModule: ShareModule_1,
         };
     };
     return ShareModule;
@@ -52518,12 +52529,12 @@ ShareModule = ShareModule_1 = __decorate([
     core_1.NgModule({
         imports: [
             common_1.CommonModule,
-            src_1.HintModule
+            src_1.HintModule,
         ],
         exports: [
             common_1.CommonModule,
-            src_1.HintModule
-        ]
+            src_1.HintModule,
+        ],
     })
 ], ShareModule);
 exports.ShareModule = ShareModule;
@@ -52555,12 +52566,14 @@ var HintComponent = (function () {
         this.hintService.overlay$.subscribe(function (data) { return _this.show = data; });
     }
     HintComponent.prototype.dismiss = function () {
-        this.hintService.overlayNext();
+        if (this.hintService.hintOptions.dismissOnOverlay)
+            this.hintService.overlayNext();
     };
     return HintComponent;
 }());
 HintComponent = __decorate([
     core_1.Component({
+        // tslint:disable-next-line
         selector: 'tour-overlay',
         template: "<div class=\"hint-overlay\" *ngIf=\"show\" (click)=\"dismiss()\"></div>",
     }),
@@ -52641,6 +52654,7 @@ var TourComponent = (function () {
         this.hintService.register(this.selector, this);
     };
     TourComponent.prototype.showStep = function () {
+        this.hintService.showingStep$.next(this);
         this.position = this.position || this.hintService.hintOptions.defaultPosition;
         this.order = +this.order || this.hintService.hintOptions.defaultOrder;
         var highlightedElement = document.getElementById(this.selector);
@@ -52732,7 +52746,7 @@ __decorate([
 TourComponent = __decorate([
     core_1.Component({
         selector: variables_1.HintConfig.HINT_TAG,
-        template: "<div class=\"intro-tour-hint-wrapper {{transformClass}}\" *ngIf=\"showme\" [ngStyle]=\"{'top': topPos+'px', 'left': leftPos+'px'}\" >\n    <div class=\"header\" *ngIf=\"title\">{{title}}</div>\n    <div class=\"content\"><ng-content></ng-content></div>\n    <div class=\"footer\">\n      <a class=\"navigate-btn\" *ngIf=\"hasPrev\" (click)=\"prev()\">&#8592;</a>\n      <a class=\"navigate-btn\" *ngIf=\"hasNext\" (click)=\"next()\">&#8594;</a>\n      <a class=\"navigate-btn\" (click)=\"exit()\">&#10006;</a>\n    </div>\n  </div>",
+        template: "<div class=\"intro-tour-hint-wrapper {{transformClass}} step{{order}} {{position}}\"\n  *ngIf=\"showme\" [ngStyle]=\"{'top': topPos+'px', 'left': leftPos+'px'}\" >\n    <div class=\"header\" *ngIf=\"title\">{{title}}</div>\n    <div class=\"content\"><ng-content></ng-content></div>\n    <div class=\"footer\">\n      <a class=\"navigate-btn\" *ngIf=\"hasPrev\" (click)=\"prev()\">&#8592;</a>\n      <a class=\"navigate-btn\" *ngIf=\"hasNext\" (click)=\"next()\">&#8594;</a>\n      <a class=\"navigate-btn\" (click)=\"exit()\">&#10006;</a>\n    </div>\n  </div>",
     }),
     __metadata("design:paramtypes", [hint_service_1.HintService])
 ], TourComponent);
@@ -52764,4 +52778,4 @@ exports.HintOptions = HintOptions;
 
 /***/ })
 ],[131]);
-//# sourceMappingURL=main.95423659f9c9bb81f01c.js.map
+//# sourceMappingURL=main.13ffc267115437d04f28.js.map

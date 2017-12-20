@@ -18,6 +18,6 @@ export class HintModule {
             ],
         };
     }
-};
+}
 
 export { HintService, TourComponent };

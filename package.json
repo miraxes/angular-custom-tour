@@ -5,7 +5,7 @@
     "type": "git",
     "url": "https://github.com/miraxes/angular-custom-tour"
   },
-  "version": "0.0.16",
+  "version": "0.0.17",
   "license": "MIT",
   "main": "bundles/angular-custom-tour.umd.min.js",
   "module": "index.js",
@@ -28,9 +28,12 @@
     "umd": "rm -rf bundles && webpack --config config/webpack.umd.js --progress --profile --bail",
     "clean": "rm -rf docs",
     "start": "npm run server:dev:hmr",
-    "ngc": "ngc"
+    "ngc": "ngc",
+    "ngc-build": "rm -rf lib && rm -rf \"src/node_modules\" && \"node_modules/.bin/ngc\" -p tsconfig-aot.json"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@angular/platform-server": "^5.1.1"
+  },
   "devDependencies": {
     "@angular/common": "^4.0.3",
     "@angular/compiler": "^4.0.3",

@@ -34,6 +34,8 @@ In your module (app.module.ts)
   ]
   ```
 Initialize it in your page component
+
+> In case you want to init slider after pageload, you should use ngAfterViewInit
   ```typescript
   import { HintService } from 'angular-custom-tour'
 
@@ -53,10 +55,6 @@ Initialize it in your page component
 
   }
   ```
-
-  ## NOTE:
-
-  > In case you want to init slider after pageload, you should use ngAfterViewInit
 
   ```html
   <!-- Bluring element insert on top of the page-->
@@ -78,7 +76,19 @@ Initialize it in your page component
 
   > selector MUST BE unique, so you can highlight Element once
 
-Also you need to inject styles from `styles/main.css`
+## Styles
+
+You need to inject styles from `styles/main.css`
+
+if you are using  angular CLI -> angular-cli.json
+```
+"styles": [
+        ...
+        "styles.scss",
+        "../node_modules/angular-custom-tour/styles/main.css"
+        ...
+      ],
+```
 
 
 # Custom options Usage

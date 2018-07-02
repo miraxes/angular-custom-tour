@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { DOCUMENT } from "@angular/common";
 import { HintService } from '../hint.service';
 import { HintConfig } from '../variables';
 
@@ -28,7 +29,8 @@ export class TourComponent implements OnInit {
   transformClass: string;
   transformY: boolean;
   transformX: boolean;
-  constructor(public hintService: HintService) {
+  constructor(public hintService: HintService,
+              @Inject(DOCUMENT) private document: Document) {
   }
 
   ngOnInit(): void {
@@ -39,7 +41,7 @@ export class TourComponent implements OnInit {
     this.hintService.showingStep$.next(this);
     this.position = this.position || this.hintService.hintOptions.defaultPosition;
     this.order = +this.order || this.hintService.hintOptions.defaultOrder;
-    let highlightedElement = document.getElementById(this.selector);
+    let highlightedElement = this.document.getElementById(this.selector);
 
     if(highlightedElement) {
       highlightedElement.style.zIndex = HintConfig.Z_INDEX;
@@ -88,7 +90,7 @@ export class TourComponent implements OnInit {
   }
 
   hideStep(): void {
-    let highlightedElement = document.getElementById(this.selector);
+    let highlightedElement = this.document.getElementById(this.selector);
 
     if(highlightedElement) {
       highlightedElement.style.zIndex = '0';

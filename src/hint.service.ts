@@ -88,9 +88,6 @@ export class HintService {
    * @param  {TourComponent} component itself
    */
   public register(selector: string, component: TourComponent): void {
-    if (this.anchors[selector]) {
-      throw 'selector ' + selector + ' already registered!';
-    }
     this.anchors[selector] = component;
     this.registration$.next(true);
   }

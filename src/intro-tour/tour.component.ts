@@ -9,9 +9,9 @@ import { HintConfig } from '../variables';
     <div class="header" *ngIf="title">{{title}}</div>
     <div class="content"><ng-content></ng-content></div>
     <div class="footer">
-      <a class="navigate-btn" *ngIf="hasPrev" (click)="prev()">&#8592;</a>
-      <a class="navigate-btn" *ngIf="hasNext" (click)="next()">&#8594;</a>
-      <a class="navigate-btn" (click)="exit()">&#10006;</a>
+      <a class="navigate-btn prev" *ngIf="hasPrev" (click)="prev()">&#8592;</a>
+      <a class="navigate-btn next" *ngIf="hasNext" (click)="next()">&#8594;</a>
+      <a class="navigate-btn exit" (click)="exit()">&#10006;</a>
     </div>
   </div>`,
 })

@@ -58,10 +58,9 @@ function webpackConfig() {
       }),
 
       new webpack.ContextReplacementPlugin(
-        // The (\\|\/) piece accounts for path separators in *nix and Windows
-        /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
-        path.join(__dirname, './src')
-      )
+        /angular(\\|\/)core(\\|\/)(@angular|esm5)/,
+        path.resolve(__dirname, '../src')
+      ),
     ],
 
     devServer: {

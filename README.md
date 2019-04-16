@@ -11,7 +11,7 @@
 [https://miraxes.github.io/angular-custom-tour](https://miraxes.github.io/angular-custom-tour)
 
 
-# Custom tour with Angular 2.x.x
+# Custom tour with Angular 2+
 
 Follow instructions and everything should be fine. :)
 

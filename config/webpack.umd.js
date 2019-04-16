@@ -36,12 +36,11 @@ module.exports = {
     }]
   },
   plugins: [
-    // fix the warning in ./~/@angular/core/src/linker/system_js_ng_module_factory_loader.js
     new webpack.ContextReplacementPlugin(
-      // The (\\|\/) piece accounts for path separators in *nix and Windows
-      /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
-      path.join(__dirname, './src')
+      /angular(\\|\/)core(\\|\/)(@angular|esm5)/,
+      path.resolve(__dirname, '../src')
     ),
+
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: true,
       beautify: false,

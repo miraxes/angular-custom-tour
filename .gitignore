@@ -11,5 +11,6 @@ dist/
 *.d.ts
 *.js.map
 !docs/**/*.js.map
+.idea
 
 *.metadata.json

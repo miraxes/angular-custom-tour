@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { DOCUMENT } from "@angular/common";
+import { Component, Input, OnInit, Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 import { HintService } from '../hint.service';
 import { HintConfig } from '../variables';
 
@@ -7,12 +7,15 @@ import { HintConfig } from '../variables';
   selector: HintConfig.HINT_TAG,
   template: `<div class="intro-tour-hint-wrapper {{transformClass}} step{{order}} {{position}}"
   *ngIf="showme" [ngStyle]="{'top': topPos+'px', 'left': leftPos+'px'}" >
-    <div class="header" *ngIf="title">{{title}}</div>
+    <div class="header" *ngIf="title">
+        {{title}}
+        <a *ngIf="dismissible" class="close navigate-btn navigate-btn__close" (click)="exit()">&#10006;</a>
+    </div>
     <div class="content"><ng-content></ng-content></div>
     <div class="footer">
-      <a class="navigate-btn" *ngIf="hasPrev" (click)="prev()">&#8592;</a>
-      <a class="navigate-btn" *ngIf="hasNext" (click)="next()">&#8594;</a>
-      <a class="navigate-btn" (click)="exit()">&#10006;</a>
+      <a class="navigate-btn navigate-btn__previous" *ngIf="hasPrev" (click)="prev()">Previous</a>
+      <a class="navigate-btn navigate-btn__next" *ngIf="hasNext" (click)="next()">Next</a>
+      <a class="navigate-btn navigate-btn__next" *ngIf="!hasNext" (click)="exit()">Finish Tour</a>
     </div>
   </div>`,
 })
@@ -21,6 +24,7 @@ export class TourComponent implements OnInit {
   @Input() selector: string;
   @Input() order: number;
   @Input() position: string;
+  @Input() public dismissible: boolean;
   showme: boolean;
   hasNext: boolean;
   hasPrev: boolean;
@@ -39,6 +43,7 @@ export class TourComponent implements OnInit {
 
   showStep(): void {
     this.hintService.showingStep$.next(this);
+    this.dismissible = this.dismissible || this.hintService.hintOptions.dismissible;
     this.position = this.position || this.hintService.hintOptions.defaultPosition;
     this.order = +this.order || this.hintService.hintOptions.defaultOrder;
     let highlightedElement = this.document.getElementById(this.selector);

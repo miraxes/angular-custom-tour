@@ -7,4 +7,5 @@ export const HintConfig = {
   DEFAULT_PX_LAYER: 15,
   APPLY_RELATIVE: true,
   DISMISS_ON_OVERLAY: false,
+  DISMISSIBLE: true,
 };

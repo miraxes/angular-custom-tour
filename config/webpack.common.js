@@ -34,7 +34,21 @@ function webpackConfig() {
       {
         test: /\.css$/,
         use: 'raw-loader'
-      }]
+      },
+      {
+          test   : /\.scss$/,
+          use    : [
+              'raw-loader',
+              {
+                  loader : 'postcss-loader',
+                  options: {
+                      plugins: [require('autoprefixer')]
+                  }
+              },
+              'sass-loader'
+          ]
+      },
+      ]
     },
 
     plugins: [

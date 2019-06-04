@@ -1,0 +1,115 @@
+// ******************************
+// SCSS Variables
+// ******************************
+
+$highlight_color: #6200ee;
+$text_color: #333;
+
+.intro-tour-hint-wrapper {
+  position: absolute !important;
+  background-color: #ffffff;
+  border-radius: 3px;
+  z-index: 999;
+  color: $text_color;
+  min-width: 360px;
+  box-shadow: 0 11px 15px -7px rgba(0,0,0,.2), 0 24px 38px 3px rgba(0,0,0,.14), 0 9px 46px 8px rgba(0,0,0,.12);
+
+  .header, .content, .footer {
+    padding: 1.5rem;
+    position: relative;
+  }
+
+  .header {
+    font-weight: bold;
+    text-align: left;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  .footer {
+    margin-top: 1rem;
+  }
+}
+
+.intro-tour-hint-wrapper {
+
+  &.transformX_50 {
+    transform: translateX(-50%);
+  }
+
+  &.transformY_50 {
+    transform: translateY(-50%);
+  }
+
+  &.transformX_50.transformY_100 {
+    transform: translateX(-50%) translateY(-100%);
+  }
+
+  &.transformY_50.transformX_100 {
+    transform: translateX(-100%) translateY(-50%);
+  }
+
+  .navigate-btn {
+    color: $highlight_color;
+    border-radius: 3px;
+    margin-left: 7px;
+    font-size: 1rem;
+    border: 1px solid;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 0 0 0 rgba(0,0,0,.2), 0 0 0 0 rgba(0,0,0,.14), 0 0 0 0 rgba(0,0,0,.12);
+    transition: all .3s ease;
+
+    &:first-of-type {
+      margin-left: 0;
+    }
+
+    &:hover {
+      box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+    }
+
+    &.navigate-btn__next, &.navigate-btn__previous {
+      padding: .75rem 1.5em;
+    }
+
+    &.navigate-btn__close {
+      padding: .5em;
+      height: 2.75rem;
+      width: 2.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      opacity: .4;
+      margin-right: 0;
+      margin-left: auto;
+
+      &:hover {
+        opacity: 1;
+        border-radius: 50%;
+      }
+    }
+  }
+
+}
+
+.hint-disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+.hint-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .5);
+  z-index: 20;
+  top: 0;
+  left: 0;
+}
+
+.hint-relative {
+  position: relative;
+}

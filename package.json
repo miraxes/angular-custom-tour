@@ -32,6 +32,7 @@
     "ngc-build": "rm -rf lib && rm -rf \"src/node_modules\" && \"node_modules/.bin/ngc\" -p tsconfig-aot.json"
   },
   "dependencies": {
+    "@angular/animations": "^4.4.7",
     "@angular/platform-server": "^5.1.1"
   },
   "devDependencies": {

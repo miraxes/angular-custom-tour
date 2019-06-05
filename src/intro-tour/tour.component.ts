@@ -28,6 +28,8 @@ export class TourComponent implements OnInit {
   @Input() order: number;
   @Input() position: string;
   @Input() public dismissible: boolean;
+  @Input() customCss: string;
+
   showme: boolean;
   hasNext: boolean;
   hasPrev: boolean;
@@ -92,6 +94,11 @@ export class TourComponent implements OnInit {
           this.transformEnd = 'translateY(-50%) translateX(0%)';
           this.topPos = highlightedElement.offsetTop + highlightedElement.offsetHeight / 2;
           this.leftPos = highlightedElement.offsetLeft + highlightedElement.offsetWidth + this.hintService.hintOptions.defaultLayer;
+          break;
+        case 'neutral':
+          this.topPos = highlightedElement.offsetTop + highlightedElement.offsetHeight / 2;
+          this.leftPos = highlightedElement.offsetLeft + highlightedElement.offsetWidth + this.hintService.hintOptions.defaultLayer;
+          this.transformClass = this.customCss;
           break;
         default:
           throw 'Invalid hint position ->' + this.position;

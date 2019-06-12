@@ -13,8 +13,8 @@ import { HintOptions } from '../../src/options';
   templateUrl: './template.html',
   providers: [HintService],
   styleUrls: [
-    '../../styles/main.css',
     './style.css',
+    '../../styles/styles.scss',
   ],
 })
 export class AppComponent implements OnInit {

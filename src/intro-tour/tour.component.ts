@@ -1,36 +1,47 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 import { HintService } from '../hint.service';
 import { HintConfig } from '../variables';
+import { tourHintAnimation } from '../animations';
 
 @Component({
   selector: HintConfig.HINT_TAG,
   template: `<div class="intro-tour-hint-wrapper {{transformClass}} step{{order}} {{position}}"
-  *ngIf="showme" [ngStyle]="{'top': topPos+'px', 'left': leftPos+'px'}" >
-    <div class="header" *ngIf="title">{{title}}</div>
+  *ngIf="showme" [ngStyle]="{'top': topPos+'px', 'left': leftPos+'px'}"
+                  [@tourHintAnimation]="{value: tourHintAnimation, params: { transformStart: transformStart, transformEnd: transformEnd}}">
+    <div class="header" *ngIf="title">
+        {{title}}
+        <a *ngIf="dismissible" class="close navigate-btn navigate-btn__close" (click)="exit()">&#10006;</a>
+    </div>
     <div class="content"><ng-content></ng-content></div>
     <div class="footer">
-      <a class="navigate-btn prev" *ngIf="hasPrev" (click)="prev()">&#8592;</a>
-      <a class="navigate-btn next" *ngIf="hasNext" (click)="next()">&#8594;</a>
-      <a class="navigate-btn exit" (click)="exit()">&#10006;</a>
+      <a class="navigate-btn navigate-btn__previous" *ngIf="hasPrev" (click)="prev()">Previous</a>
+      <a class="navigate-btn navigate-btn__next" *ngIf="hasNext" (click)="next()">Next</a>
+      <a class="navigate-btn navigate-btn__next" *ngIf="!hasNext" (click)="exit()">Finish Tour</a>
     </div>
   </div>`,
+  animations: [ tourHintAnimation ],
 })
 export class TourComponent implements OnInit {
   @Input() title: string;
   @Input() selector: string;
   @Input() order: number;
   @Input() position: string;
+  @Input() public dismissible: boolean;
   @Input() customCss: string;
-  
+
   showme: boolean;
   hasNext: boolean;
   hasPrev: boolean;
   topPos: number;
   leftPos: number;
-  transformClass: string;
+  transformClass: string = 'transformX_50 transformY_100';
+  transformStart: boolean | string = 'translateX(-50%) translateY(-60%)';
+  transformEnd: boolean | string = 'translateX(-50%) translateY(-100%)';
   transformY: boolean;
   transformX: boolean;
-  constructor(public hintService: HintService) {
+  constructor(public hintService: HintService,
+              @Inject(DOCUMENT) private document: Document) {
   }
 
   ngOnInit(): void {
@@ -39,11 +50,12 @@ export class TourComponent implements OnInit {
 
   showStep(): void {
     this.hintService.showingStep$.next(this);
+    this.dismissible = this.dismissible || this.hintService.hintOptions.dismissible;
     this.position = this.position || this.hintService.hintOptions.defaultPosition;
     this.order = +this.order || this.hintService.hintOptions.defaultOrder;
-    let highlightedElement = document.getElementById(this.selector);
+    let highlightedElement = this.document.getElementById(this.selector);
 
-    if(highlightedElement) {
+    if (highlightedElement) {
       highlightedElement.style.zIndex = HintConfig.Z_INDEX;
 
       if (this.hintService.hintOptions.elementsDisabled) {
@@ -57,23 +69,31 @@ export class TourComponent implements OnInit {
       switch (this.position) {
         case 'top':
           this.transformClass = 'transformX_50 transformY_100';
+          this.transformStart = 'translateX(-50%) translateY(-60%)';
+          this.transformEnd = 'translateX(-50%) translateY(-100%)';
           this.topPos = highlightedElement.offsetTop - this.hintService.hintOptions.defaultLayer;
           this.leftPos = highlightedElement.offsetLeft + highlightedElement.offsetWidth / 2;
           break;
         case 'bottom':
           this.transformClass = 'transformX_50';
+          this.transformStart = 'translateX(-50%) translateY(-20%)';
+          this.transformEnd = 'translateX(-50%) translateY(0%)';
           this.topPos = highlightedElement.offsetTop + highlightedElement.offsetHeight + this.hintService.hintOptions.defaultLayer;
           this.leftPos = highlightedElement.offsetLeft + highlightedElement.offsetWidth / 2;
           break;
         case 'left':
+          this.transformClass = 'transformY_50 transformX_100';
+          this.transformStart = 'translateY(-50%) translateX(-75%)';
+          this.transformEnd = 'translateY(-50%) translateX(-100%)';
           this.topPos = highlightedElement.offsetTop + highlightedElement.offsetHeight / 2;
           this.leftPos = highlightedElement.offsetLeft - this.hintService.hintOptions.defaultLayer;
-          this.transformClass = 'transformY_50 transformX_100';
           break;
         case 'right':
+          this.transformClass = 'transformY_50';
+          this.transformStart = 'translateY(-50%) translateX(-10%)';
+          this.transformEnd = 'translateY(-50%) translateX(0%)';
           this.topPos = highlightedElement.offsetTop + highlightedElement.offsetHeight / 2;
           this.leftPos = highlightedElement.offsetLeft + highlightedElement.offsetWidth + this.hintService.hintOptions.defaultLayer;
-          this.transformClass = 'transformY_50';
           break;
         case 'neutral':
           this.topPos = highlightedElement.offsetTop + highlightedElement.offsetHeight / 2;
@@ -95,7 +115,7 @@ export class TourComponent implements OnInit {
   }
 
   hideStep(): void {
-    let highlightedElement = document.getElementById(this.selector);
+    let highlightedElement = this.document.getElementById(this.selector);
 
     if(highlightedElement) {
       highlightedElement.style.zIndex = '0';

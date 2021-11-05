@@ -3,6 +3,8 @@
 [![Versions](https://img.shields.io/npm/v/angular-custom-tour.svg?style=flat-square)]()
 [![License](https://img.shields.io/npm/l/angular-custom-tour.svg?style=flat-square)]()
 
+## This library is for Angular versions less than 6, for newer versions of Angular please use [https://github.com/miraxes/ngx-custom-tour](https://github.com/miraxes/ngx-custom-tour)
+
 # How it works?
 
 ![demo GIF](/demo.gif)
